@@ -2,17 +2,17 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import './Input.css'
 
-const Input = props => (
-  <input className='input' {...props} />
+const Input = ({ value, placeholder, onChange, style, type }) => (
+  <input value={value} placeholder={placeholder} onChange={onChange} style={style} className='input' type={type} />
 )
-export default Input
-
 Input.propTypes = {
   value: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
+  onChange: PropTypes.func,
+  style: PropTypes.object,
   type: PropTypes.string,
-  onChange: PropTypes.func
 }
 Input.defaultProps = {
   type: 'text'
 }
+export default Input

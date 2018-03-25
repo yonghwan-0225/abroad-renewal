@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { mergeIfExist } from '../../util'
 
 const Button = ({ value, onClick, style }) => (
-  <div className='button' onClick={onClick} style={style ? mergeIfExist(styles.container, style.container) : styles.container} >
+  <div className='button' onClick={onClick} style={style ? mergeIfExist(styles.container, style.container) : styles.container}>
     <div style={styles.aligner}><span style={style ? mergeIfExist(styles.text, style.text) : styles.text}>{value}</span></div>
   </div>
 )
@@ -17,7 +17,7 @@ const styles = {
     textAlign: 'center',
     backgroundColor: 'goldenrod',
     cursor: 'pointer',
-    transition: '0.5s',
+    transition: '0.3s',
     display: 'table'
   },
   aligner: {

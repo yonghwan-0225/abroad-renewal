@@ -4,3 +4,11 @@
   font-family: 'Nanum Gothic', sans-serif;
   outline: none;
 }
+.basic-phrase {
+  color: #717171;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+.basic-phrase:hover {
+  color: goldenrod;
+}

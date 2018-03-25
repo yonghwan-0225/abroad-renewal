@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import './MainBoard.css'
 
 const MainBoard = () => (
-  <div className='mainboard'>
+  <div className='main-board'>
 
   </div>
 )

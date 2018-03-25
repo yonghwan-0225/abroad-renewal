@@ -50,7 +50,7 @@ export function deepCopy (target, option) {
   } else if (Object.prototype.toString.call(target) === '[object Array]') {
     copy = Object.assign([], target)
   } else {
-    return option || target
+    return option !== undefined ? option : target
   }
   for (let child in copy) {
     copy[child] = deepCopy(copy[child])

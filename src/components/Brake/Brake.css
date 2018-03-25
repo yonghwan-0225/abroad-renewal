@@ -1,0 +1,21 @@
+.brake {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+.dot0, .dot1, .dot2 {
+  position: absolute;
+  top: 50%;
+  transition: 0.3s;
+}
+.dot0 {
+  left: 45%;
+}
+.dot1 {
+  left: 50%;
+}
+.dot2 {
+  left: 55%;
+}

@@ -1,42 +1,75 @@
 import * as ACTION from '../action'
 import { deepCopy } from '../util'
 
+const appInitState = {
+  brake: 'none'
+}
 const modeInitState = {
-  sideboard: 'login',
-  mainboard: 'exc'
+  sideBoard: 'login',
+  mainBoard: 'exc'
+}
+const excInitState = {
+  loaded: false
+}
+const userInitState = {
+  login: false
+}
+export function app (state = appInitState, action) {
+  switch(action.type) {
+    case ACTION.SET_BRAKE:
+      return deepCopy(state, {
+        brake: action.brake
+      })
+    case ACTION.CLEAR_BRAKE:
+      return deepCopy(state, {
+        brake: 'none'
+      })
+    default:
+      return state
+  }
 }
 export function mode (state = modeInitState, action) {
   switch(action.type) {
     case ACTION.CHANGE_MODE:
       return deepCopy(state, {
-        sideboard: action.sideboard || state.sideboard,
-        mainboard: action.mainboard || state.mainboard
+        sideBoard: action.sideBoard || state.sideBoard,
+        mainBoard: action.mainBoard || state.mainBoard
       })
     default:
       return state
   }
 }
-const excInitState = {
-  loaded: false,
-  entry: [],
-  excData: {},
-  measure: [],
-  serviceRate: {}
-}
 export function exc (state = excInitState, action) {
   switch(action.type) {
     case ACTION.RENEW_EXC:
-      return deepCopy(state, {
+      return {
         loaded: true,
         entry: action.entry,
         excData: action.excData,
         measure: action.measure,
         serviceRate: action.serviceRate
-      })
+      }
     default:
       return state
   }
 }
-export function etc (state = {}, action) {
-  return state
+export function user (state = userInitState, action) {
+  switch(action.type) {
+    case ACTION.LOG_IN:
+      return {
+        login: true,
+        id: action.id,
+        name: action.name,
+        email: action.email,
+        phone: action.phone,
+        address: action.address,
+        order: action.order
+      }
+    case ACTION.LOG_OUT:
+      return {
+        login: false
+      }
+    default:
+      return state
+  }
 }
