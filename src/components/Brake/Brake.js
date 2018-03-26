@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import { clearAlertMessage } from '../../action'
 import './Brake.css'
 
 class Brake extends Component {
@@ -14,7 +15,7 @@ class Brake extends Component {
     }
     this.idx = 0
   }
-  componentWillReceiveProps ({ brake }) {
+  componentWillReceiveProps ({ brake, alertMessage, clearAlertMessage }) {
     if (brake) {
       this.setState({ display: 'block' })
       this.loadingWave()
@@ -25,6 +26,10 @@ class Brake extends Component {
       setTimeout(() => {
         clearInterval(this.timer)
         this.setState({ display: 'none' })
+        if (alertMessage) {
+          alert(alertMessage)
+          clearAlertMessage()
+        }
       }, 800)
     }
   }
@@ -48,9 +53,14 @@ class Brake extends Component {
   }
 }
 const mapStateToProps = state => ({
-  
+  alertMessage: state.app.alertMessage
+})
+const mapDispatchToProps = dispatch => ({
+  clearAlertMessage: () => dispatch(clearAlertMessage())
 })
 Brake.propTypes = {
-  brake: PropTypes.bool.isRequired
+  brake: PropTypes.bool.isRequired,
+  alertMessage: PropTypes.string.isRequired,
+  clearAlertMessage: PropTypes.func.isRequired
 }
-export default connect(mapStateToProps)(Brake)
+export default connect(mapStateToProps, mapDispatchToProps)(Brake)

@@ -2,7 +2,8 @@ import * as ACTION from '../action'
 import { deepCopy } from '../util'
 
 const appInitState = {
-  brake: 'none'
+  brake: 'none',
+  alertMessage: ''
 }
 const modeInitState = {
   sideBoard: 'login',
@@ -12,7 +13,8 @@ const excInitState = {
   loaded: false
 }
 const userInitState = {
-  login: false
+  login: false,
+  order: []
 }
 export function app (state = appInitState, action) {
   switch(action.type) {
@@ -22,7 +24,8 @@ export function app (state = appInitState, action) {
       })
     case ACTION.CLEAR_BRAKE:
       return deepCopy(state, {
-        brake: 'none'
+        brake: 'none',
+        alertMessage: action.alertMessage
       })
     default:
       return state

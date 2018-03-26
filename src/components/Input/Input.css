@@ -1,13 +1,21 @@
-.input {
-  width: 270;
-  height: 45;
-  margin-bottom: 10;
-  padding-left: 15;
+.basic-input {
+  width: 270px;
+  height: 45px;
+  margin-bottom: 10px;
+  padding-left: 15px;
   font-size: 1.2rem;
 }
-.input:focus {
-  border: 2px solid #c7c7c7
+.wide-input {
+  width: 270px;
+  height: 115px;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  font-size: 1.2rem;
+  resize: none;
 }
-.input::placeholder {
+.basic-input:focus, .wide-input:focus {
+  border: 2px solid goldenrod;
+}
+.basic-input::placeholder, .wide-input::placeholder {
   color: #c7c7c7
 }

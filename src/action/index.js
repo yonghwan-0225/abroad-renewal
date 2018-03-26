@@ -9,8 +9,13 @@ export const setBrake = ({ brake }) => ({
   type: SET_BRAKE,
   brake
 })
-export const clearBrake = () => ({
-  type: CLEAR_BRAKE
+export const clearBrake = (alertMessage) => ({
+  type: CLEAR_BRAKE,
+  alertMessage
+})
+export const clearAlertMessage = () => ({
+  type: CLEAR_BRAKE,
+  alertMessage: ''
 })
 export const renewExc = ({ entry, excData, measure, serviceRate }) => ({
   type: RENEW_EXC,
