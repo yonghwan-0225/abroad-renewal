@@ -31,14 +31,14 @@ class Login extends Component {
       setBrake()
       request.post(loginURL).type('form').send(params).end((err, res) => {
         if (err) {
-          clearBrake('서버가 고장났어요')
+          clearBrake('서버가 고장났습니다')
           return
         }
         const { status, message, userData, orderData } = res.body
         if (status) {
           onLogin({ userData, orderData })
           setModeUser()
-          clearBrake('로그인되었습니다')
+          clearBrake('로그인 되었습니다')
         } else {
           this.update({ errMessage: message })
           clearBrake()

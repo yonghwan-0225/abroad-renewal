@@ -11,6 +11,9 @@ const Input = ({ value, placeholder, onChange, type }) => {
       case 'password':
         onChange(handlePWChange(e))
         return
+      case 'new-password':
+        onChange(handlePWChange(e, true))
+        return
       case 'name':
         onChange(handleNameChange(e))
         return
@@ -36,13 +39,13 @@ const Input = ({ value, placeholder, onChange, type }) => {
       errMessage
     }
   }
-  function handlePWChange (e) {
+  function handlePWChange (e, isNew) {
     const inputValue = e.target.value.replace(/[^a-zA-Z0-9]/g, '')
     let errMessage
     if (e.target.value != inputValue) errMessage = '비밀번호는 알파벳 대소문자와 숫자의 조합이어야 합니다'
     else if (inputValue.length > 12) errMessage = '비밀번호의 길이는 12자 이하이어야 합니다'
     return {
-      target: 'inputPW',
+      target: isNew ? 'inputNewPW' : 'inputPW',
       inputValue,
       errMessage
     }
@@ -51,7 +54,7 @@ const Input = ({ value, placeholder, onChange, type }) => {
     const inputValue = e.target.value.replace(/[^a-zA-Z가-힣ㄱ-ㅎㅏ-ㅣ]/g, '')
     let errMessage
     if (e.target.value != inputValue) errMessage = '이름은 알파벳과 한글만 가능합니다'
-    else if (inputValue.length > 20) errMessage = '이름의 길이는 20자 이하이어야 합니다'
+    else if (inputValue.length > 20) errMessage = '이름의 길이는 4자 이하이어야 합니다'
     return {
       target: 'inputName',
       inputValue,
@@ -97,7 +100,7 @@ const Input = ({ value, placeholder, onChange, type }) => {
         return
     }
   }
-  return type !== 'address' ? <input value={value} placeholder={placeholder} onChange={handleOnChange} className='basic-input' type={type !== 'password' ? 'text' : 'password'} /> : <textarea value={value} placeholder={placeholder} onClick={inputAddress} className='wide-input' readOnly />
+  return type !== 'address' ? <input value={value} placeholder={placeholder} onChange={handleOnChange} className='basic-input' type={type === 'password' || type === 'new-password' ? 'password' : 'text'} /> : <textarea value={value} placeholder={placeholder} onClick={inputAddress} className='wide-input' readOnly />
 }
 Input.propTypes = {
   value: PropTypes.string.isRequired,

@@ -178,7 +178,7 @@ server.post('/api/login', (req, res) => {
   //   userData: {
   //     id: 'liebebe',
   //     pw: '12341234',
-  //     name: 'Kim Yeonjae',
+  //     name: '김연재',
   //     email: 'liebe3060@gmail.com',
   //     phone: '01023983060',
   //     address: '경기도 군포시 산본동 1052 주공11단지 1103동 311호'
@@ -194,6 +194,11 @@ server.post('/api/join', (req, res) => {  // for test
   // res.json({
   //   status: true
   // })
+})
+server.post('/api/edit', (req, res) => {
+  request.post(businessURL + '/api/edit').type('form').send(req.body).end((err, res2) => {
+    res.json(res2.body)
+  })
 })
 server.post('/callback/address', (req, res) => {  // address callback
   io.emit('address', req.body)

@@ -4,3 +4,4 @@ export const excRenewCycle = 60000
 export const excRenewURL = `${baseURL}/api/renew`
 export const loginURL = `${baseURL}/api/login`
 export const joinURL = `${baseURL}/api/join`
+export const editURL = `${baseURL}/api/edit`

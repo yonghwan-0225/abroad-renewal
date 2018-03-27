@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import { UserInfo, Bar } from '..'
 
 class User extends Component {
   constructor (props) {
@@ -12,13 +13,18 @@ class User extends Component {
   render () {
     return (
       <div>
-        TEST
+        <UserInfo />
+        <Bar style={styles.bar} />
       </div>
     )
   }
 }
 const styles = {
-
+  bar: {
+    width: 300,
+    margin: '0 auto 40',
+    borderWidth: 0.5,
+  }
 }
 const mapStateToProps = state => ({
 

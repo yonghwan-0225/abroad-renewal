@@ -1,14 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { Bar, Login, Join, User, Brake } from '..'
+import { Bar, Login, Join, User, Edit, Brake } from '..'
 import './SideBoard.css'
 
 const SideBoard = ({ mode, brake }) => (
   <div className='side-board'>
     <img src='img/abroad.png' style={styles.logoImg} />
     <Bar style={styles.bar} />
-    {mode === 'login' ? <Login /> : mode === 'join' ? <Join /> : mode === 'user' ? <User /> : undefined}
+    {mode === 'login' ? <Login /> : mode === 'join' ? <Join /> : mode === 'user' ? <User /> : mode === 'edit' ? <Edit /> : undefined}
     <Brake brake={brake} />
   </div>
 )

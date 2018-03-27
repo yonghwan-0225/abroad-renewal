@@ -8,12 +8,6 @@ const CompName = () => (
 
   </div>
 )
-CompName.propTypes = {
-
-}
-CompName.defaultProps = {
-
-}
 const styles = {
 
 }
@@ -23,5 +17,11 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
 
 })
+CompName.propTypes = {
+
+}
+CompName.defaultProps = {
+
+}
 export default CompName  // no connect
 export default connect(mapStateToProps, mapDispatchToProps)(CompName)  // connect
