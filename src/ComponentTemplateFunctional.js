@@ -8,9 +8,6 @@ const CompName = () => (
 
   </div>
 )
-const styles = {
-
-}
 const mapStateToProps = state => ({
 
 })

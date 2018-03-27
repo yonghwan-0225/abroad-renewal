@@ -4,12 +4,9 @@ import { connect } from 'react-redux'
 
 const Exchange = () => (
   <div>
-    
+
   </div>
 )
-const styles = {
-
-}
 const mapStateToProps = state => ({
 
 })

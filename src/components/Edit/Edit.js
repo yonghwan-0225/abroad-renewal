@@ -101,26 +101,11 @@ class Edit extends Component {
         <Input value={inputEmail} placeholder=' 이메일' onChange={this.update} type='email' />
         <Input value={inputPhone} placeholder=' 전화번호' onChange={this.update} type='phone' />
         <Input value={inputAddress} placeholder=' 주소' onChange={this.update} type='address' />
-        <AlertableButton value='수정하기' errMessage={errMessage} onClick={this.handleEditClick} style={styles.editButton} />
+        <AlertableButton value='수정하기' errMessage={errMessage} onClick={this.handleEditClick} />
         <Bar />
-        <Phrase value='그냥 안바꿀래요' onClick={this.props.setModeUser} style={styles.phrase} className={{ text: 'basic-phrase' }} />
+        <Phrase value='그냥 안바꿀래요' onClick={this.props.setModeUser} className={{ text: 'basic-phrase' }} />
       </div>
     )
-  }
-}
-const styles = {
-  inputAddress: {
-    height: '90px'
-  },
-  editButton: {
-    container: {
-      marginBottom: 40
-    }
-  },
-  phrase: {
-    container: {
-      marginBottom: 30
-    }
   }
 }
 const mapStateToProps = state => ({

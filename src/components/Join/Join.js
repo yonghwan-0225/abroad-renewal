@@ -94,26 +94,11 @@ class Join extends Component {
         <Input value={inputEmail} placeholder=' 이메일' onChange={this.update} type='email' />
         <Input value={inputPhone} placeholder=' 전화번호' onChange={this.update} type='phone' />
         <Input value={inputAddress} placeholder=' 주소' onChange={this.update} type='address' />
-        <AlertableButton value='가입하기' errMessage={errMessage} onClick={this.handleJoinClick} style={styles.joinButton} />
+        <AlertableButton value='가입하기' errMessage={errMessage} onClick={this.handleJoinClick} />
         <Bar />
-        <Phrase value='아 맞다, 나 가입했었구나' onClick={this.props.setModeLogin} style={styles.phrase} className={{ text: 'basic-phrase' }} />
+        <Phrase value='아 맞다, 나 가입했었구나' onClick={this.props.setModeLogin} className={{ text: 'basic-phrase' }} />
       </div>
     )
-  }
-}
-const styles = {
-  inputAddress: {
-    height: '90px'
-  },
-  joinButton: {
-    container: {
-      marginBottom: 40
-    }
-  },
-  phrase: {
-    container: {
-      marginBottom: 30
-    }
   }
 }
 const mapStateToProps = state => ({

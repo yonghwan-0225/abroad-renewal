@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import { mergeIfExist } from '../../util'
 
 const Phrase = ({ value, onClick, style, className }) => (
-  <div style={style ? mergeIfExist(styles.container, style.container) : styles.container} className={className ? className.container : undefined}>
-    <div style={styles.aligner}><span onClick={onClick} style={style ? style.text : undefined} className={className ? className.text : undefined}>{value}</span></div>
+  <div style={style.container} className={className ? className.container : undefined}>
+    <div style={style.aligner}><span onClick={onClick} style={style ? style.text : undefined} className={className ? className.text : undefined}>{value}</span></div>
   </div>
 )
 Phrase.propTypes = {
@@ -14,18 +14,17 @@ Phrase.propTypes = {
   className: PropTypes.object
 }
 Phrase.defaultProps = {
-
-}
-const styles = {
-  container: {
-    position: 'relative',
-    margin: '0 auto',
-    textAlign: 'center',
-    display: 'table'
-  },
-  aligner: {
-    display: 'table-cell',
-    verticalAlign: 'middle'
+  style: {
+    container: {
+      position: 'relative',
+      margin: '0 auto 30',
+      textAlign: 'center',
+      display: 'table'
+    },
+    aligner: {
+      display: 'table-cell',
+      verticalAlign: 'middle'
+    }
   }
 }
 export default Phrase

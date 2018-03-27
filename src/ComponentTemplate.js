@@ -18,9 +18,6 @@ class CompName extends Component {
     )
   }
 }
-const styles = {
-
-}
 const mapStateToProps = state => ({
 
 })

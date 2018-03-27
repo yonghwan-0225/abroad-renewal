@@ -78,23 +78,11 @@ class Login extends Component {
       <div>
         <Input value={inputID} placeholder=' 아이디' onChange={this.update} type='id' />
         <Input value={inputPW} placeholder=' 비밀번호' onChange={this.update} type='password' />
-        <AlertableButton value='로그인' errMessage={errMessage} onClick={this.handleLoginClick} style={styles.loginButton} />
+        <AlertableButton value='로그인' errMessage={errMessage} onClick={this.handleLoginClick} />
         <Bar />
-        <Phrase value='가입하고 싶은데 어떡하죠?' onClick={this.props.setModeJoin} style={styles.phrase} className={{ text: 'basic-phrase' }} />
+        <Phrase value='가입하고 싶은데 어떡하죠?' onClick={this.props.setModeJoin} className={{ text: 'basic-phrase' }} />
       </div>
     )
-  }
-}
-const styles = {
-  loginButton: {
-    container: {
-      marginBottom: 40
-    }
-  },
-  phrase: {
-    container: {
-      marginBottom: 30
-    }
   }
 }
 const mapStateToProps = state => ({

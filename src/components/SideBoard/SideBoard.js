@@ -4,9 +4,9 @@ import { connect } from 'react-redux'
 import { Bar, Login, Join, User, Edit, Brake } from '..'
 import './SideBoard.css'
 
-const SideBoard = ({ mode, brake }) => (
+const SideBoard = ({ mode, brake, style }) => (
   <div className='side-board'>
-    <img src='img/abroad.png' style={styles.logoImg} />
+    <img src='img/abroad.png' style={style.logoImg} />
     <Bar />
     {mode === 'login' ? <Login /> : mode === 'join' ? <Join /> : mode === 'user' ? <User /> : mode === 'edit' ? <Edit /> : undefined}
     <Brake brake={brake} />
@@ -14,14 +14,14 @@ const SideBoard = ({ mode, brake }) => (
 )
 SideBoard.propTypes = {
   mode: PropTypes.string.isRequired,
-  brake: PropTypes.bool.isRequired
+  brake: PropTypes.bool.isRequired,
+  style: PropTypes.object
 }
 SideBoard.defaultProps = {
-
-}
-const styles = {
-  logoImg: {
-    marginBottom: 20
+  style: {
+    logoImg: {
+      marginBottom: 20
+    }
   }
 }
 const mapStateToProps = state => ({

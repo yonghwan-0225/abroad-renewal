@@ -17,9 +17,6 @@ MainBoard.propTypes = {
 MainBoard.defaultProps = {
 
 }
-const styles = {
-
-}
 const mapStateToProps = state => ({
   mode: state.mode.mainBoard,
   brake: state.app.brake === 'mainBoard'
