@@ -6,6 +6,8 @@ import Button from './Button/Button'
 import ButtonList from './ButtonList/ButtonList'
 import Edit from './Edit/Edit'
 import Exchange from './Exchange/Exchange'
+import ExcTable from './ExcTable/ExcTable'
+import ExcTableRow from './ExcTableRow/ExcTableRow'
 import Input from './Input/Input'
 import Join from './Join/Join'
 import Login from './Login/Login'
@@ -24,6 +26,8 @@ export {
   ButtonList,
   Edit,
   Exchange,
+  ExcTable,
+  ExcTableRow,
   Input,
   Join,
   Login,

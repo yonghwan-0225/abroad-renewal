@@ -1,32 +1,27 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
 import { Button } from '..'
 
-const ButtonList = ({ values, onClick, selected, style }) => (
+const ButtonList = ({ values, valueAlias, onClick, selected, style }) => (
   <div style={style.container}>
-    {values.map(e => <Button key={e} value={e} onClick={() => onClick(e)} style={e === selected ? style.buttonSelected : style.button} />)}
+    {values.map(e => <Button key={e} value={e} onClick={() => onClick(valueAlias[e] || e)} style={(valueAlias[e] || e) === selected ? style.buttonSelected : style.button} />)}
   </div>
 )
-const mapStateToProps = state => ({
-
-})
-const mapDispatchToProps = dispatch => ({
-
-})
 ButtonList.propTypes = {
   values: PropTypes.array.isRequired,
+  valueAlias: PropTypes.object,
   onClick: PropTypes.func,
   selected: PropTypes.string,
   style: PropTypes.object
 }
 ButtonList.defaultProps = {
+  valueAlias: {},
   style: {
     container: {
       position: 'relative',
       width: 300,
       height: 45,
-      margin: '0 auto 40',
+      margin: '0 auto 20',
       border: '1px solid rgb(199, 199, 199)',
       cursor: 'pointer'
     },
@@ -58,6 +53,7 @@ ButtonList.defaultProps = {
         backgroundColor: 'goldenrod',
         textAlign: 'center',
         transition: '0.3s',
+        cursor: 'default',
         display: 'table'
       },
       aligner: {
@@ -71,4 +67,4 @@ ButtonList.defaultProps = {
     }
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(ButtonList)
+export default ButtonList

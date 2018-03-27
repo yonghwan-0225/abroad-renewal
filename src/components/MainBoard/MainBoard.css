@@ -2,9 +2,11 @@
   position: relative;
   float: left;
   width: 375px;
+  margin-bottom: 75px;
   padding-top: 40px;
   padding-bottom: 20px;
   background-color: rgb(255, 255, 255);
   border: 1px solid rgb(199, 199, 199);
+  border-radius: 5px;
   text-align: center;
 }

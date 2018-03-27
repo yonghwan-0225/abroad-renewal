@@ -96,7 +96,7 @@ class Join extends Component {
         <Input value={inputAddress} placeholder=' 주소' onChange={this.update} type='address' />
         <AlertableButton value='가입하기' errMessage={errMessage} onClick={this.handleJoinClick} />
         <Bar />
-        <Phrase value='아 맞다, 나 가입했었구나' onClick={this.props.setModeLogin} className={{ text: 'basic-phrase' }} />
+        <Phrase value='아 맞다, 나 가입했었다' onClick={this.props.setModeLogin} className={{ text: 'basic-phrase' }} />
       </div>
     )
   }

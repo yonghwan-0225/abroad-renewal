@@ -13,131 +13,131 @@ server.use(bodyParser.urlencoded({ extended: false }))
 server.get('/api/renew', (req, res) => {  // for test
   res.json({
     entry: ['$', '€', '元', '￥'],
-    erData: {
+    excData: {
       '$': [  // test data
         {
-          bank: 'SHINHAN',
+          bank: '신한',
           fromW: 1100.3,
           toW: 1060.12
         },
         {
-          bank: 'HANA',
+          bank: '하나',
           fromW: 1097.6,
           toW: 1063.42
         },
         {
-          bank: 'WOORI',
+          bank: '우리',
           fromW: 1098.5,
           toW: 1061.3
         },
         {
-          bank: 'NH',
+          bank: '농협',
           fromW: 1101.3,
           toW: 1061.12
         },
         {
-          bank: 'IBK',
+          bank: '기업',
           fromW: 1098.6,
           toW: 1064.42
         },
         {
-          bank: 'KB',
+          bank: '국민',
           fromW: 1099.5,
           toW: 1062.3
         }
       ],
       '€': [  // test data
         {
-          bank: 'SHINHAN',
+          bank: '신한',
           fromW: 1354.3,
           toW: 1301.12
         },
         {
-          bank: 'HANA',
+          bank: '하나',
           fromW: 1351.06,
           toW: 1303.24
         },
         {
-          bank: 'WOORI',
+          bank: '우리',
           fromW: 1348.74,
           toW: 1306.2
         },
         {
-          bank: 'NH',
+          bank: '농협',
           fromW: 1355.3,
           toW: 1300.12
         },
         {
-          bank: 'IBK',
+          bank: '기업',
           fromW: 1352.06,
           toW: 1304.24
         },
         {
-          bank: 'KB',
+          bank: '국민',
           fromW: 1349.74,
           toW: 1307.2
         }
       ],
       '元': [
         {
-          bank: 'SHINHAN',
+          bank: '신한',
           fromW: 173.3,
           toW: 161.2
         },
         {
-          bank: 'HANA',
+          bank: '하나',
           fromW: 171.2,
           toW: 160.41
         },
         {
-          bank: 'WOORI',
+          bank: '우리',
           fromW: 174.63,
           toW: 162.8
         },
         {
-          bank: 'NH',
+          bank: '농협',
           fromW: 174.3,
           toW: 160.2
         },
         {
-          bank: 'IBK',
+          bank: '기업',
           fromW: 172.2,
           toW: 161.41
         },
         {
-          bank: 'KB',
+          bank: '국민',
           fromW: 173.63,
           toW: 163.8
         }
       ],
       '￥': [
         {
-          bank: 'SHINHAN',
+          bank: '신한',
           fromW: 1011.67,
           toW: 981.3
         },
         {
-          bank: 'HANA',
+          bank: '하나',
           fromW: 1008.2,
           toW: 977.4
         },
         {
-          bank: 'WOORI',
+          bank: '우리',
           fromW: 1012.51,
           toW: 978.3
         },
         {
-          bank: 'NH',
+          bank: '농협',
           fromW: 1010.67,
           toW: 980.3
         },
         {
-          bank: 'IBK',
+          bank: '기업',
           fromW: 1009.2,
           toW: 978.4
         },
         {
-          bank: 'KB',
+          bank: '국민',
           fromW: 1011.51,
           toW: 979.3
         }

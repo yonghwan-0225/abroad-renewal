@@ -31,11 +31,9 @@ class App extends Component {
   }
   render () {
     return (
-      <div className='app-wrapper'>
-        <div className='app'>
-          <SideBoard />
-          <MainBoard />
-        </div>
+      <div className='app'>
+        <SideBoard />
+        <MainBoard />
       </div>
     )
   }

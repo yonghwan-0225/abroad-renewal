@@ -1,0 +1,22 @@
+.exc-table {
+  width: 300px;
+  margin: 0 auto 20;
+  overflow: hidden;
+}
+.exc-table table {
+  border-collapse: collapse;
+}
+.exc-table th, .exc-table td {
+  width: 100px;
+  height: 40px;
+  border-radius: 5px;
+  cursor: default;
+}
+.exc-table td:hover {
+  background-color: goldenrod;
+  font-weight: bold;
+}
+.exc-table td span {
+  position: relative;
+  left: 18px;
+}

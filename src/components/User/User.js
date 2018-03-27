@@ -19,8 +19,6 @@ class User extends Component {
     )
   }
 }
-const styles = {
-}
 const mapStateToProps = state => ({
 
 })

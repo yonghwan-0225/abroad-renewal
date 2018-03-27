@@ -12,6 +12,14 @@ const SideBoard = ({ mode, brake, alertMessage, style }) => (
     <Brake brake={brake} alertMessage={alertMessage} />
   </div>
 )
+const mapStateToProps = state => ({
+  mode: state.board.sideBoard.mode,
+  brake: state.board.sideBoard.brake,
+  alertMessage: state.board.sideBoard.alertMessage
+})
+const mapDispatchToProps = dispatch => ({
+
+})
 SideBoard.propTypes = {
   mode: PropTypes.string.isRequired,
   brake: PropTypes.bool.isRequired,
@@ -24,12 +32,4 @@ SideBoard.defaultProps = {
     }
   }
 }
-const mapStateToProps = state => ({
-  mode: state.board.sideBoard.mode,
-  brake: state.board.sideBoard.brake,
-  alertMessage: state.board.sideBoard.alertMessage
-})
-const mapDispatchToProps = dispatch => ({
-
-})
 export default connect(mapStateToProps, mapDispatchToProps)(SideBoard)

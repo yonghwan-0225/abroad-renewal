@@ -4,6 +4,9 @@
   font-family: 'Nanum Gothic', sans-serif;
   outline: none;
 }
+body {
+  background-color: rgb(216, 206, 179);
+}
 .basic-phrase {
   color: #717171;
   font-size: 1.1rem;

@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
-import { clearAlertMessage } from '../../action'
 import './Brake.css'
 
 class Brake extends Component {
@@ -22,7 +20,7 @@ class Brake extends Component {
       this.timer = setInterval(() => {
         this.loadingWave()
       }, 800)
-    } else {
+    } else if (brake != this.props.brake) {
       setTimeout(() => {
         clearInterval(this.timer)
         this.setState({ display: 'none' })
@@ -49,12 +47,8 @@ class Brake extends Component {
     setTimeout(() => this.setState({opacity2: 0}), 600)
   }
 }
-const mapStateToProps = state => ({
-})
-const mapDispatchToProps = dispatch => ({
-})
 Brake.propTypes = {
   brake: PropTypes.bool.isRequired,
   alertMessage: PropTypes.string.isRequired
 }
-export default connect(mapStateToProps, mapDispatchToProps)(Brake)
+export default Brake

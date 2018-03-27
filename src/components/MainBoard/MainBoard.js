@@ -10,13 +10,6 @@ const MainBoard = ({ mode, brake, alertMessage }) => (
     <Brake brake={brake} alertMessage={alertMessage} />
   </div>
 )
-MainBoard.propTypes = {
-  mode: PropTypes.string.isRequired,
-  brake: PropTypes.bool.isRequired
-}
-MainBoard.defaultProps = {
-
-}
 const mapStateToProps = state => ({
   mode: state.board.mainBoard.mode,
   brake: state.board.mainBoard.brake,
@@ -25,4 +18,11 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
 
 })
+MainBoard.propTypes = {
+  mode: PropTypes.string.isRequired,
+  brake: PropTypes.bool.isRequired
+}
+MainBoard.defaultProps = {
+
+}
 export default connect(mapStateToProps, mapDispatchToProps)(MainBoard)
