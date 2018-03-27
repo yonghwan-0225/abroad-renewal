@@ -74,17 +74,14 @@ class Login extends Component {
   }
   render () {
     const { inputID, inputPW, errMessage } = this.state
-    const basicPhrase = {
-      text: 'basic-phrase'
-    }
     return (
       <div>
         <Input value={inputID} placeholder=' 아이디' onChange={this.update} type='id' />
         <Input value={inputPW} placeholder=' 비밀번호' onChange={this.update} type='password' />
         <AlertableButton value='로그인' errMessage={errMessage} onClick={this.handleLoginClick} />
         <Bar />
-        <Phrase value='가입하고 싶은데 어떡하죠?' onClick={this.props.setModeJoin} className={basicPhrase} />
-        <Phrase value='여기가 대체 뭐하는 곳이죠?' onClick={this.props.setModeIntroduce} className={basicPhrase} />
+        <Phrase value='가입하고 싶은데 어떡하죠?' onClick={this.props.setModeJoin} className={{ text: 'basic-phrase' }} />
+        <Phrase value='여기가 대체 뭐하는 곳이죠?' onClick={this.props.setModeIntroduce} className={{ text: 'basic-phrase' }} />
       </div>
     )
   }

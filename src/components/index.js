@@ -9,6 +9,7 @@ import Exchange from './Exchange/Exchange'
 import ExcTable from './ExcTable/ExcTable'
 import ExcTableRow from './ExcTableRow/ExcTableRow'
 import Input from './Input/Input'
+import Introduce from './Introduce/Introduce'
 import Join from './Join/Join'
 import Login from './Login/Login'
 import MainBoard from './MainBoard/MainBoard'
@@ -29,6 +30,7 @@ export {
   ExcTable,
   ExcTableRow,
   Input,
+  Introduce,
   Join,
   Login,
   MainBoard,

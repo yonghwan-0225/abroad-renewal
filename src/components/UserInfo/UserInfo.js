@@ -1,14 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { changeMode } from '../../action'
+import { changeMode, logout } from '../../action'
 
-const UserInfo = ({ id, name, setModeEdit, setModeLogin, style }) => {
+const UserInfo = ({ id, name, setModeEdit, setModeLogin, onLogout, style }) => {
   function handleEditClick () {
     setModeEdit()
   }
   function handleLogoutClick () {
     alert('로그아웃 되었어요')
+    onLogout()
     setModeLogin()
   }
   return (
@@ -29,13 +30,15 @@ const mapStateToProps = state => ({
 })
 const mapDispatchToProps = dispatch => ({
   setModeEdit: () => dispatch(changeMode({ board: 'sideBoard', mode: 'edit' })),
-  setModeLogin: () => dispatch(changeMode({ board: 'sideBoard', mode: 'login' }))
+  setModeLogin: () => dispatch(changeMode({ board: 'sideBoard', mode: 'login' })),
+  onLogout: () => dispatch(logout())
 })
 UserInfo.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   setModeEdit: PropTypes.func.isRequired,
   setModeLogin: PropTypes.func.isRequired,
+  onLogout: PropTypes.func.isRequired,
   style: PropTypes.object.isRequired
 }
 UserInfo.defaultProps = {

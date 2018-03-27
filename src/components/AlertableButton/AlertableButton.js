@@ -21,7 +21,7 @@ AlertableButton.defaultProps = {
         margin: '0 auto 40',
         padding: '0 10',
         textAlign: 'center',
-        backgroundColor: 'crimson',
+        backgroundColor: '#CD3855',
         cursor: 'not-allowed',
         transition: '0.3s',
         display: 'table'
@@ -53,7 +53,6 @@ AlertableButton.defaultProps = {
         verticalAlign: 'middle'
       },
       text: {
-        color: 'white',
         fontSize: '1.2rem'
       }
     }

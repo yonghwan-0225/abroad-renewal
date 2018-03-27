@@ -36,5 +36,5 @@ export const login = ({ userData, orderData }) => ({
   order: orderData
 })
 export const logout = () => ({
-  tpye: LOG_OUT
+  type: LOG_OUT
 })

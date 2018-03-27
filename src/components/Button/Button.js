@@ -30,7 +30,6 @@ Button.defaultProps = {
       verticalAlign: 'middle'
     },
     text: {
-      color: 'white',
       fontSize: '1.2rem'
     }
   }
