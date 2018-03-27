@@ -1,21 +1,23 @@
 export const SET_BRAKE = 'SB'
 export const CLEAR_BRAKE = 'CB'
+export const CHANGE_MODE = 'CM'
 export const RENEW_EXC = 'RE'
-export const CHANGE_MODE = 'MC'
 export const LOG_IN = 'LI'
 export const LOG_OUT = 'LO'
 
-export const setBrake = ({ brake }) => ({
+export const setBrake = ({ board }) => ({
   type: SET_BRAKE,
-  brake
+  board
 })
-export const clearBrake = (alertMessage) => ({
+export const clearBrake = ({ board, alertMessage }) => ({
   type: CLEAR_BRAKE,
+  board,
   alertMessage
 })
-export const clearAlertMessage = () => ({
-  type: CLEAR_BRAKE,
-  alertMessage: ''
+export const changeMode = ({ board, mode }) => ({
+  type: CHANGE_MODE,
+  board,
+  mode
 })
 export const renewExc = ({ entry, excData, measure, serviceRate }) => ({
   type: RENEW_EXC,
@@ -23,11 +25,6 @@ export const renewExc = ({ entry, excData, measure, serviceRate }) => ({
   excData,
   measure,
   serviceRate
-})
-export const changeMode = ({ sideBoard, mainBoard }) => ({
-  type: CHANGE_MODE,
-  sideBoard,
-  mainBoard
 })
 export const login = ({ userData, orderData }) => ({
   type: LOG_IN,

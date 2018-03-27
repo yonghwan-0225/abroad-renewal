@@ -39,16 +39,16 @@ class Join extends Component {
       setBrake()
       request.post(joinURL).type('form').send(params).end((err, res) => {
         if (err) {
-          clearBrake('서버가 고장났습니다')
+          clearBrake({ board: 'sideBoard', alertMessage: '서버가 고장났습니다' })
           return
         }
         const { status, message } = res.body
         if (status) {
           setModeLogin()
-          clearBrake('가입 되었습니다')
+          clearBrake({ board: 'sideBoard', alertMessage: '가입 되었습니다' })
         } else {
           this.update({ errMessage: message })
-          clearBrake()
+          clearBrake({ board: 'sideBoard' })
         }
       })
     }
@@ -105,9 +105,9 @@ const mapStateToProps = state => ({
 
 })
 const mapDispatchToProps = dispatch => ({
-  setBrake: () => dispatch(setBrake({ brake: 'sideBoard' })),
+  setBrake: () => dispatch(setBrake({ board: 'sideBoard' })),
   clearBrake: payload => dispatch(clearBrake(payload)),
-  setModeLogin: () => dispatch(changeMode({ sideBoard: 'login' }))
+  setModeLogin: () => dispatch(changeMode({ board: 'sideBoard', mode: 'login' }))
 })
 Join.propTypes = {
   setBrake: PropTypes.func.isRequired,

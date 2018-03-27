@@ -4,10 +4,10 @@ import { connect } from 'react-redux'
 import { Exchange, Brake } from '..'
 import './MainBoard.css'
 
-const MainBoard = ({ mode, brake }) => (
+const MainBoard = ({ mode, brake, alertMessage }) => (
   <div className='main-board'>
     {mode === 'exchange' ? <Exchange /> : undefined}
-    <Brake brake={brake} />
+    <Brake brake={brake} alertMessage={alertMessage} />
   </div>
 )
 MainBoard.propTypes = {
@@ -18,8 +18,9 @@ MainBoard.defaultProps = {
 
 }
 const mapStateToProps = state => ({
-  mode: state.mode.mainBoard,
-  brake: state.app.brake === 'mainBoard'
+  mode: state.board.mainBoard.mode,
+  brake: state.board.mainBoard.brake,
+  alertMessage: state.board.mainBoard.alertMessage
 })
 const mapDispatchToProps = dispatch => ({
 

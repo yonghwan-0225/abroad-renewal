@@ -1,13 +1,17 @@
 import * as ACTION from '../action'
 import { deepCopy } from '../util'
 
-const appInitState = {
-  brake: 'none',
-  alertMessage: ''
-}
-const modeInitState = {
-  sideBoard: 'login',
-  mainBoard: 'exchange'
+const boardInitState = {
+  sideBoard: {
+    mode: 'login',
+    brake: false,
+    alertMessage: ''
+  },
+  mainBoard: {
+    mode: 'exchange',
+    brake: false,
+    alertMessage: ''
+  }
 }
 const excInitState = {
   loaded: false
@@ -16,27 +20,26 @@ const userInitState = {
   login: false,
   order: []
 }
-export function app (state = appInitState, action) {
+export function board (state = boardInitState, action) {
   switch(action.type) {
     case ACTION.SET_BRAKE:
       return deepCopy(state, {
-        brake: action.brake
+        [action.board]: {
+          brake: true
+        }
       })
     case ACTION.CLEAR_BRAKE:
       return deepCopy(state, {
-        brake: 'none',
-        alertMessage: action.alertMessage
+        [action.board]: {
+          brake: false,
+          alertMessage: action.alertMessage
+        }
       })
-    default:
-      return state
-  }
-}
-export function mode (state = modeInitState, action) {
-  switch(action.type) {
     case ACTION.CHANGE_MODE:
       return deepCopy(state, {
-        sideBoard: action.sideBoard || state.sideBoard,
-        mainBoard: action.mainBoard || state.mainBoard
+        [action.board]: {
+          mode: action.mode
+        }
       })
     default:
       return state

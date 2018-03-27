@@ -69,8 +69,8 @@ const mapStateToProps = state => ({
   name: state.user.name
 })
 const mapDispatchToProps = dispatch => ({
-  setModeEdit: () => dispatch(changeMode({ sideBoard: 'edit' })),
-  setModeLogin: () => dispatch(changeMode({ sideBoard: 'login' }))
+  setModeEdit: () => dispatch(changeMode({ board: 'sideBoard', mode: 'edit' })),
+  setModeLogin: () => dispatch(changeMode({ board: 'sideBoard', mode: 'login' }))
 })
 UserInfo.propTypes = {
   id: PropTypes.string.isRequired,

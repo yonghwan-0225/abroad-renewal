@@ -15,21 +15,18 @@ class Brake extends Component {
     }
     this.idx = 0
   }
-  componentWillReceiveProps ({ brake, alertMessage, clearAlertMessage }) {
+  componentWillReceiveProps ({ brake, alertMessage }) {
     if (brake) {
       this.setState({ display: 'block' })
       this.loadingWave()
       this.timer = setInterval(() => {
         this.loadingWave()
       }, 800)
-    } else if (brake != this.props.brake) {
+    } else {
       setTimeout(() => {
         clearInterval(this.timer)
         this.setState({ display: 'none' })
-        if (alertMessage) {
-          alert(alertMessage)
-          clearAlertMessage()
-        }
+        alert(alertMessage)
       }, 400)
     }
   }
@@ -53,14 +50,11 @@ class Brake extends Component {
   }
 }
 const mapStateToProps = state => ({
-  alertMessage: state.app.alertMessage
 })
 const mapDispatchToProps = dispatch => ({
-  clearAlertMessage: () => dispatch(clearAlertMessage())
 })
 Brake.propTypes = {
   brake: PropTypes.bool.isRequired,
-  alertMessage: PropTypes.string.isRequired,
-  clearAlertMessage: PropTypes.func.isRequired
+  alertMessage: PropTypes.string.isRequired
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Brake)
