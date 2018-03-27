@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
 const Button = ({ value, onClick, style }) => (
-  <div className='button' onClick={onClick} style={style.container}>
+  <div onClick={onClick} style={style.container}>
     <div style={style.aligner}><span style={style.text}>{value}</span></div>
   </div>
 )

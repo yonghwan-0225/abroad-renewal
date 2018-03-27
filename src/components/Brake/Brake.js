@@ -26,7 +26,7 @@ class Brake extends Component {
       setTimeout(() => {
         clearInterval(this.timer)
         this.setState({ display: 'none' })
-        alert(alertMessage)
+        if (alertMessage) alert(alertMessage)
       }, 400)
     }
   }

@@ -1,6 +1,6 @@
 .app-wrapper {
   height: 100%;
-  background-color: rgb(216, 206, 179)
+  background-color: rgb(216, 206, 179);
 }
 @media (max-height: 800px) {
   .app-wrapper {

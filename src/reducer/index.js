@@ -14,7 +14,11 @@ const boardInitState = {
   }
 }
 const excInitState = {
-  loaded: false
+  loaded: false,
+  entry: [],
+  excData: {},
+  measure: {},
+  serviceRate: {}
 }
 const userInitState = {
   login: false,

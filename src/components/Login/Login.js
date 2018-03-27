@@ -31,17 +31,17 @@ class Login extends Component {
       setBrake()
       request.post(loginURL).type('form').send(params).end((err, res) => {
         if (err) {
-          clearBrake({ board: 'sideBoard', alertMessage: '서버가 고장났습니다' })
+          clearBrake('서버가 고장났습니다')
           return
         }
         const { status, message, userData, orderData } = res.body
         if (status) {
           onLogin({ userData, orderData })
           setModeUser()
-          clearBrake({ board: 'sideBoard', alertMessage: '로그인 되었습니다' })
+          clearBrake('로그인 되었습니다')
         } else {
           this.update({ errMessage: message })
-          clearBrake({ board: 'sideBoard' })
+          clearBrake()
         }
       })
     }
@@ -90,7 +90,7 @@ const mapStateToProps = state => ({
 })
 const mapDispatchToProps = dispatch => ({
   setBrake: () => dispatch(setBrake({ board: 'sideBoard' })),
-  clearBrake: payload => dispatch(clearBrake(payload)),
+  clearBrake: alertMessage => dispatch(clearBrake({ board: 'sideBoard', alertMessage })),
   onLogin: payload => dispatch(login(payload)),
   setModeUser: () => dispatch(changeMode({ board: 'sideBoard', mode: 'user' })),
   setModeJoin: () => dispatch(changeMode({ board: 'sideBoard', mode: 'join' }))

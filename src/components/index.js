@@ -3,6 +3,7 @@ import App from './App/App'
 import Bar from './Bar/Bar'
 import Brake from './Brake/Brake'
 import Button from './Button/Button'
+import ButtonList from './ButtonList/ButtonList'
 import Edit from './Edit/Edit'
 import Exchange from './Exchange/Exchange'
 import Input from './Input/Input'
@@ -20,6 +21,7 @@ export {
   Bar,
   Brake,
   Button,
+  ButtonList,
   Edit,
   Exchange,
   Input,

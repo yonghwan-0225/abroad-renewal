@@ -45,16 +45,16 @@ class Edit extends Component {
       setBrake()
       request.post(editURL).type('form').send(params).end((err, res) => {
         if (err) {
-          clearBrake({ board: 'sideBoard', alertMessage: '서버가 고장났습니다' })
+          clearBrake('서버가 고장났습니다')
           return
         }
         const { status, message } = res.body
         if (status) {
           setModeUser()
-          clearBrake({ board: 'sideBoard', alertMessage: '회원정보가 수정되었습니다' })
+          clearBrake('회원정보가 수정되었습니다')
         } else {
           this.update({ errMessage: message })
-          clearBrake({ board: 'sideBoard' })
+          clearBrake()
         }
       })
     }
@@ -118,7 +118,7 @@ const mapStateToProps = state => ({
 })
 const mapDispatchToProps = dispatch => ({
   setBrake: () => dispatch(setBrake({ board: 'sideBoard' })),
-  clearBrake: payload => dispatch(clearBrake(payload)),
+  clearBrake: alertMessage => dispatch(clearBrake({ board: 'sideBoard', alertMessage })),
   setModeUser: () => dispatch(changeMode({ board: 'sideBoard', mode: 'user' }))
 })
 Edit.propTypes = {
