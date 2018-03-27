@@ -22,7 +22,7 @@ class Brake extends Component {
       this.timer = setInterval(() => {
         this.loadingWave()
       }, 800)
-    } else {
+    } else if (brake != this.props.brake) {
       setTimeout(() => {
         clearInterval(this.timer)
         this.setState({ display: 'none' })
@@ -30,7 +30,7 @@ class Brake extends Component {
           alert(alertMessage)
           clearAlertMessage()
         }
-      }, 800)
+      }, 400)
     }
   }
   componentWillUnmount () {

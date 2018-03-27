@@ -7,7 +7,7 @@ const appInitState = {
 }
 const modeInitState = {
   sideBoard: 'login',
-  mainBoard: 'exc'
+  mainBoard: 'exchange'
 }
 const excInitState = {
   loaded: false

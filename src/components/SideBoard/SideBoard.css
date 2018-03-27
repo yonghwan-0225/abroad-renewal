@@ -1,6 +1,9 @@
 .side-board {
+  position: relative;
   float: left;
   width: 375px;
+  margin-right: 20px;
+  margin-bottom: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
   background-color: rgb(255, 255, 255);

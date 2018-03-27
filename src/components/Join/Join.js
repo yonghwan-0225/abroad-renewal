@@ -95,7 +95,7 @@ class Join extends Component {
         <Input value={inputPhone} placeholder=' 전화번호' onChange={this.update} type='phone' />
         <Input value={inputAddress} placeholder=' 주소' onChange={this.update} type='address' />
         <AlertableButton value='가입하기' errMessage={errMessage} onClick={this.handleJoinClick} style={styles.joinButton} />
-        <Bar style={styles.bar} />
+        <Bar />
         <Phrase value='아 맞다, 나 가입했었구나' onClick={this.props.setModeLogin} style={styles.phrase} className={{ text: 'basic-phrase' }} />
       </div>
     )
@@ -109,11 +109,6 @@ const styles = {
     container: {
       marginBottom: 40
     }
-  },
-  bar: {
-    width: 300,
-    margin: '0 auto 40',
-    borderWidth: 0.5,
   },
   phrase: {
     container: {

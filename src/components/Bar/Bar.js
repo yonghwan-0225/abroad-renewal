@@ -9,6 +9,11 @@ Bar.propTypes = {
   style: PropTypes.object
 }
 Bar.defaultProps = {
-  color: '#c7c7c7'
+  color: '#c7c7c7',
+  style: {
+    width: 300,
+    margin: '0 auto 40',
+    borderWidth: 0.5
+  }
 }
 export default Bar

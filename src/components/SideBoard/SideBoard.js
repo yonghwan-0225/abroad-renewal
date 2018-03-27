@@ -7,13 +7,14 @@ import './SideBoard.css'
 const SideBoard = ({ mode, brake }) => (
   <div className='side-board'>
     <img src='img/abroad.png' style={styles.logoImg} />
-    <Bar style={styles.bar} />
+    <Bar />
     {mode === 'login' ? <Login /> : mode === 'join' ? <Join /> : mode === 'user' ? <User /> : mode === 'edit' ? <Edit /> : undefined}
     <Brake brake={brake} />
   </div>
 )
 SideBoard.propTypes = {
-  mode: PropTypes.string.isRequired
+  mode: PropTypes.string.isRequired,
+  brake: PropTypes.bool.isRequired
 }
 SideBoard.defaultProps = {
 
@@ -21,11 +22,6 @@ SideBoard.defaultProps = {
 const styles = {
   logoImg: {
     marginBottom: 20
-  },
-  bar: {
-    width: 300,
-    margin: '0 auto 40',
-    borderWidth: 0.5,
   }
 }
 const mapStateToProps = state => ({

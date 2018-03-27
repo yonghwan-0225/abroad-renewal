@@ -14,17 +14,12 @@ class User extends Component {
     return (
       <div>
         <UserInfo />
-        <Bar style={styles.bar} />
+        <Bar />
       </div>
     )
   }
 }
 const styles = {
-  bar: {
-    width: 300,
-    margin: '0 auto 40',
-    borderWidth: 0.5,
-  }
 }
 const mapStateToProps = state => ({
 

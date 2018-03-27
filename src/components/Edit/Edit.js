@@ -102,7 +102,7 @@ class Edit extends Component {
         <Input value={inputPhone} placeholder=' 전화번호' onChange={this.update} type='phone' />
         <Input value={inputAddress} placeholder=' 주소' onChange={this.update} type='address' />
         <AlertableButton value='수정하기' errMessage={errMessage} onClick={this.handleEditClick} style={styles.editButton} />
-        <Bar style={styles.bar} />
+        <Bar />
         <Phrase value='그냥 안바꿀래요' onClick={this.props.setModeUser} style={styles.phrase} className={{ text: 'basic-phrase' }} />
       </div>
     )
@@ -116,11 +116,6 @@ const styles = {
     container: {
       marginBottom: 40
     }
-  },
-  bar: {
-    width: 300,
-    margin: '0 auto 40',
-    borderWidth: 0.5,
   },
   phrase: {
     container: {

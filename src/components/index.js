@@ -4,6 +4,7 @@ import Bar from './Bar/Bar'
 import Brake from './Brake/Brake'
 import Button from './Button/Button'
 import Edit from './Edit/Edit'
+import Exchange from './Exchange/Exchange'
 import Input from './Input/Input'
 import Join from './Join/Join'
 import Login from './Login/Login'
@@ -20,6 +21,7 @@ export {
   Brake,
   Button,
   Edit,
+  Exchange,
   Input,
   Join,
   Login,

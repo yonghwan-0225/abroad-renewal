@@ -79,7 +79,7 @@ class Login extends Component {
         <Input value={inputID} placeholder=' 아이디' onChange={this.update} type='id' />
         <Input value={inputPW} placeholder=' 비밀번호' onChange={this.update} type='password' />
         <AlertableButton value='로그인' errMessage={errMessage} onClick={this.handleLoginClick} style={styles.loginButton} />
-        <Bar style={styles.bar} />
+        <Bar />
         <Phrase value='가입하고 싶은데 어떡하죠?' onClick={this.props.setModeJoin} style={styles.phrase} className={{ text: 'basic-phrase' }} />
       </div>
     )
@@ -90,11 +90,6 @@ const styles = {
     container: {
       marginBottom: 40
     }
-  },
-  bar: {
-    width: 300,
-    margin: '0 auto 40',
-    borderWidth: 0.5,
   },
   phrase: {
     container: {
