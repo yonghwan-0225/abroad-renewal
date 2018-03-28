@@ -15,3 +15,18 @@ body {
 .basic-phrase:hover {
   color: goldenrod;
 }
+.money-sign-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 35px;
+  height: 45px;
+  display: table;
+  font-size: 1.2rem;
+  cursor: default;
+}
+.money-sign-aligner {
+  display: table-cell;
+  vertical-align: middle;
+  padding-right: 10px;
+}

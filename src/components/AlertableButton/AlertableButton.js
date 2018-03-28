@@ -22,6 +22,7 @@ AlertableButton.defaultProps = {
         padding: '0 10',
         textAlign: 'center',
         backgroundColor: '#CD3855',
+        borderRadius: 5,
         cursor: 'not-allowed',
         transition: '0.3s',
         display: 'table'
@@ -44,6 +45,7 @@ AlertableButton.defaultProps = {
         padding: '0 10',
         textAlign: 'center',
         backgroundColor: 'goldenrod',
+        borderRadius: 5,
         cursor: 'pointer',
         transition: '0.3s',
         display: 'table'

@@ -4,7 +4,7 @@ import { Button } from '..'
 
 const ButtonList = ({ values, valueAlias, onClick, selected, style }) => (
   <div style={style.container}>
-    {values.map(e => <Button key={e} value={e} onClick={() => onClick(valueAlias[e] || e)} style={(valueAlias[e] || e) === selected ? style.buttonSelected : style.button} />)}
+    {values.map(e => <Button key={e} value={e} onClick={(valueAlias[e] || e) !== selected ? () => onClick(valueAlias[e] || e) : undefined} style={(valueAlias[e] || e) === selected ? style.buttonSelected : style.button} />)}
   </div>
 )
 ButtonList.propTypes = {

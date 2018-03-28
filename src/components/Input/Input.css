@@ -3,8 +3,10 @@
   height: 45px;
   margin-bottom: 10px;
   padding-left: 15px;
+  padding-right: 15px;
   font-size: 1.2rem;
   border: 1px solid rgb(199, 199, 199);
+  border-radius: 5px;
 }
 .wide-input {
   width: 270px;
@@ -14,9 +16,11 @@
   font-size: 1.2rem;
   resize: none;
   border: 1px solid rgb(199, 199, 199);
+  border-radius: 5px;
 }
 .basic-input:focus, .wide-input:focus {
-  border: 2px solid goldenrod;
+  border: 1px solid goldenrod;
+  box-shadow: 0 0 3px goldenrod;
 }
 .basic-input::placeholder, .wide-input::placeholder {
   color: #c7c7c7

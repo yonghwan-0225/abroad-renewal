@@ -21,6 +21,7 @@ Button.defaultProps = {
       padding: '0 10',
       textAlign: 'center',
       backgroundColor: 'goldenrod',
+      borderRadius: 5,
       cursor: 'pointer',
       transition: '0.3s',
       display: 'table'

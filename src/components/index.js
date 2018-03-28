@@ -13,6 +13,8 @@ import Introduce from './Introduce/Introduce'
 import Join from './Join/Join'
 import Login from './Login/Login'
 import MainBoard from './MainBoard/MainBoard'
+import MoneyInput from './MoneyInput/MoneyInput'
+import MoneyExchanged from './MoneyExchanged/MoneyExchanged'
 import Phrase from './Phrase/Phrase'
 import SideBoard from './SideBoard/SideBoard'
 import User from './User/User'
@@ -34,6 +36,8 @@ export {
   Join,
   Login,
   MainBoard,
+  MoneyInput,
+  MoneyExchanged,
   Phrase,
   SideBoard,
   User,
