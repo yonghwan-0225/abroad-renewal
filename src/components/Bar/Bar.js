@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import './Bar.css'
 
 const Bar = ({ color, style, className }) => (
-  <hr color={color} style={style} className={className.bar} />
+  <hr color={color} style={style.bar} className={className.bar || 'bar'} />
 )
 Bar.propTypes = {
   color: PropTypes.string,
@@ -11,11 +12,7 @@ Bar.propTypes = {
 }
 Bar.defaultProps = {
   color: '#c7c7c7',
-  style: {
-    width: 300,
-    margin: '0 auto 40',
-    borderWidth: 0.5
-  },
+  style: {},
   className: {}
 }
 export default Bar
