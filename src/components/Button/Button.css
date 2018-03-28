@@ -1,0 +1,11 @@
+.button__container {
+  text-align: center;
+  border-radius: 5;
+  cursor: pointer;
+  transition: 0.3s;
+  display: table;
+}
+.button__text {
+  display: table-cell;
+  vertical-align: middle;
+}

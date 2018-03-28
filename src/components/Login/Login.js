@@ -78,10 +78,10 @@ class Login extends Component {
       <div>
         <Input value={inputID} placeholder=' 아이디' onChange={this.update} type='id' />
         <Input value={inputPW} placeholder=' 비밀번호' onChange={this.update} type='password' />
-        <AlertableButton value='로그인' errMessage={errMessage} onClick={this.handleLoginClick} />
+        <AlertableButton value='로그인' errMessage={errMessage} onClick={this.handleLoginClick} style={style.alertableButton} />
         <Bar />
         <Phrase value='가입하고 싶은데 어떡하죠?' onClick={this.props.setModeJoin} className={{ text: 'basic-phrase' }} />
-        <Phrase value='여기가 대체 뭐하는 곳이죠?' onClick={this.props.setModeIntroduce} className={{ text: 'basic-phrase' }} />
+        <Phrase value='여기가 대체 뭐하는 곳인가요?' onClick={this.props.setModeIntroduce} className={{ text: 'basic-phrase' }} />
       </div>
     )
   }
@@ -108,3 +108,33 @@ Login.defaultProps = {
 
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Login)
+const style = {
+  alertableButton: {
+    err: {
+      container: {
+        position: 'relative',
+        width: 250,
+        height: 45,
+        margin: '0 auto 40',
+        padding: '0 10',
+        backgroundColor: '#CD3855',
+      },
+      text: {
+        color: 'white'
+      }
+    },
+    normal: {
+      container: {
+        position: 'relative',
+        width: 250,
+        height: 45,
+        margin: '0 auto 40',
+        padding: '0 10',
+        backgroundColor: 'goldenrod'
+      },
+      text: {
+        fontSize: '1.2rem'
+      }
+    }
+  }
+}

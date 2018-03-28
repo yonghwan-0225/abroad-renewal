@@ -1,70 +1,39 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Button } from '..'
+import './ButtonList.css'
 
-const ButtonList = ({ values, valueAlias, onClick, selected, style }) => (
-  <div style={style.container}>
-    {values.map(e => <Button key={e} value={e} onClick={(valueAlias[e] || e) !== selected ? () => onClick(valueAlias[e] || e) : undefined} style={(valueAlias[e] || e) === selected ? style.buttonSelected : style.button} />)}
-  </div>
-)
+const ButtonList = ({ values, valueAlias, selected, onClick, style, className }) => {
+  function isSelected (e) {
+    return (valueAlias[e] || e) === selected
+  }
+  return (
+    <div style={style.container} className={className.container || 'button-list__container'} >
+      {values.map(e => <Button key={e} value={e} onClick={!isSelected(e) ? () => onClick(valueAlias[e] || e) : undefined} style={isSelected(e) ? style.selected : style.normal} className={isSelected(e) ? defaultClassName.selected : defaultClassName.normal} />)}
+    </div>
+  )
+}
 ButtonList.propTypes = {
   values: PropTypes.array.isRequired,
   valueAlias: PropTypes.object,
-  onClick: PropTypes.func,
   selected: PropTypes.string,
-  style: PropTypes.object
+  onClick: PropTypes.func,
+  style: PropTypes.object,
+  className: PropTypes.object
 }
 ButtonList.defaultProps = {
   valueAlias: {},
-  style: {
-    container: {
-      position: 'relative',
-      width: 300,
-      height: 45,
-      margin: '0 auto 20',
-      border: '1px solid rgb(199, 199, 199)',
-      cursor: 'pointer'
-    },
-    button: {
-      container: {
-        position: 'relative',
-        float: 'left',
-        width: '25%',
-        height: '100%',
-        textAlign: 'center',
-        transition: '0.3s',
-        display: 'table'
-      },
-      aligner: {
-        display: 'table-cell',
-        verticalAlign: 'middle'
-      },
-      text: {
-        color: 'black',
-        fontSize: '1.2rem'
-      }
-    },
-    buttonSelected: {
-      container: {
-        position: 'relative',
-        float: 'left',
-        width: '25%',
-        height: '100%',
-        backgroundColor: 'goldenrod',
-        textAlign: 'center',
-        transition: '0.3s',
-        cursor: 'default',
-        display: 'table'
-      },
-      aligner: {
-        display: 'table-cell',
-        verticalAlign: 'middle'
-      },
-      text: {
-        color: 'black',
-        fontSize: '1.2rem'
-      }
-    }
-  }
+  style: {},
+  className: {}
 }
 export default ButtonList
+const defaultClassName = {
+  normal: {
+    container: 'button-list__button__container--normal',
+    text: 'button-list__button__text--normal'
+  },
+  selected: {
+    container: 'button-list__button__container--selected',
+    text: 'button-list__button__text--selected'
+  }
+}

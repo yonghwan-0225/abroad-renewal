@@ -94,7 +94,7 @@ class Join extends Component {
         <Input value={inputEmail} placeholder=' 이메일' onChange={this.update} type='email' />
         <Input value={inputPhone} placeholder=' 전화번호' onChange={this.update} type='phone' />
         <Input value={inputAddress} placeholder=' 주소' onChange={this.update} type='address' />
-        <AlertableButton value='가입하기' errMessage={errMessage} onClick={this.handleJoinClick} />
+        <AlertableButton value='가입하기' errMessage={errMessage} onClick={this.handleJoinClick} style={style.alertableButton} />
         <Bar />
         <Phrase value='아 맞다, 나 가입했었다' onClick={this.props.setModeLogin} className={{ text: 'basic-phrase' }} />
       </div>
@@ -118,3 +118,33 @@ Join.defaultProps = {
 
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Join)
+const style = {
+  alertableButton: {
+    err: {
+      container: {
+        position: 'relative',
+        width: 250,
+        height: 45,
+        margin: '0 auto 40',
+        padding: '0 10',
+        backgroundColor: '#CD3855',
+      },
+      text: {
+        color: 'white'
+      }
+    },
+    normal: {
+      container: {
+        position: 'relative',
+        width: 250,
+        height: 45,
+        margin: '0 auto 40',
+        padding: '0 10',
+        backgroundColor: 'goldenrod'
+      },
+      text: {
+        fontSize: '1.2rem'
+      }
+    }
+  }
+}

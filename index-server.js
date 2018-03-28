@@ -16,128 +16,128 @@ server.get('/api/renew', (req, res) => {  // for test
     excData: {
       '$': [  // test data
         {
-          bank: '신한',
+          bank: '신한은행',
           fromW: 1100.3,
           toW: 1060.12
         },
         {
-          bank: '하나',
+          bank: '하나은행',
           fromW: 1097.6,
           toW: 1063.42
         },
         {
-          bank: '우리',
+          bank: '우리은행',
           fromW: 1098.5,
           toW: 1061.3
         },
         {
-          bank: '농협',
+          bank: '농협은행',
           fromW: 1101.3,
           toW: 1061.12
         },
         {
-          bank: '기업',
+          bank: '기업은행',
           fromW: 1098.6,
           toW: 1064.42
         },
         {
-          bank: '국민',
+          bank: '국민은행',
           fromW: 1099.5,
           toW: 1062.3
         }
       ],
       '€': [  // test data
         {
-          bank: '신한',
+          bank: '신한은행',
           fromW: 1354.3,
           toW: 1301.12
         },
         {
-          bank: '하나',
+          bank: '하나은행',
           fromW: 1351.06,
           toW: 1303.24
         },
         {
-          bank: '우리',
+          bank: '우리은행',
           fromW: 1348.74,
           toW: 1306.2
         },
         {
-          bank: '농협',
+          bank: '농협은행',
           fromW: 1355.3,
           toW: 1300.12
         },
         {
-          bank: '기업',
+          bank: '기업은행',
           fromW: 1352.06,
           toW: 1304.24
         },
         {
-          bank: '국민',
+          bank: '국민은행',
           fromW: 1349.74,
           toW: 1307.2
         }
       ],
       '元': [
         {
-          bank: '신한',
+          bank: '신한은행',
           fromW: 173.3,
           toW: 161.2
         },
         {
-          bank: '하나',
+          bank: '하나은행',
           fromW: 171.2,
           toW: 160.41
         },
         {
-          bank: '우리',
+          bank: '우리은행',
           fromW: 174.63,
           toW: 162.8
         },
         {
-          bank: '농협',
+          bank: '농협은행',
           fromW: 174.3,
           toW: 160.2
         },
         {
-          bank: '기업',
+          bank: '기업은행',
           fromW: 172.2,
           toW: 161.41
         },
         {
-          bank: '국민',
+          bank: '국민은행',
           fromW: 173.63,
           toW: 163.8
         }
       ],
       '￥': [
         {
-          bank: '신한',
+          bank: '신한은행',
           fromW: 1011.67,
           toW: 981.3
         },
         {
-          bank: '하나',
+          bank: '하나은행',
           fromW: 1008.2,
           toW: 977.4
         },
         {
-          bank: '우리',
+          bank: '우리은행',
           fromW: 1012.51,
           toW: 978.3
         },
         {
-          bank: '농협',
+          bank: '농협은행',
           fromW: 1010.67,
           toW: 980.3
         },
         {
-          bank: '기업',
+          bank: '기업은행',
           fromW: 1009.2,
           toW: 978.4
         },
         {
-          bank: '국민',
+          bank: '국민은행',
           fromW: 1011.51,
           toW: 979.3
         }

@@ -5,7 +5,7 @@ import { Exchange, Brake } from '..'
 import './MainBoard.css'
 
 const MainBoard = ({ mode, brake, alertMessage }) => (
-  <div className='main-board'>
+  <div className='main-board__container'>
     {mode === 'exchange' ? <Exchange /> : undefined}
     <Brake brake={brake} alertMessage={alertMessage} />
   </div>

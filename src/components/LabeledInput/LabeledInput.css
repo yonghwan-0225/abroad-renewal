@@ -1,0 +1,46 @@
+.labeled-input__container {
+  position: relative;
+  width: 300px;
+  height: 80px;
+  margin: 0 auto 10px;
+  border: 1px solid rgb(199, 199, 199);
+  border-radius: 5px;
+}
+.labeled-input__label {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 300px;
+  height: 25px;
+  padding-top: 10px;
+  padding-left: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  text-align: left;
+  cursor: default;
+}
+.labeled-input__input {
+  position: absolute;
+  top: 30px;
+  left: 0px;
+  width: 300px;
+  height: 45px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  text-align: right;
+}
+.labeled-input__footer {
+  position: absolute;
+  top: 30px;
+  right: 0px;
+  width: 30px;
+  height: 45px;
+  padding-right: 10px;
+  font-size: 1.5rem;
+  cursor: default;
+  display: table;
+}

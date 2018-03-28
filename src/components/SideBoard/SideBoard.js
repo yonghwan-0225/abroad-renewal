@@ -6,7 +6,7 @@ import { Bar, Login, Join, User, Edit, Introduce, Brake } from '..'
 import './SideBoard.css'
 
 const SideBoard = ({ mode, brake, alertMessage, login, setModeDefault, style }) => (
-  <div className='side-board'>
+  <div className='side-board__container'>
     <img src='img/abroad.png' onClick={() => setModeDefault(login ? 'user' : 'login')} style={style.logoImg} />
     <Bar />
     {mode === 'login' ? <Login /> : mode === 'join' ? <Join /> : mode === 'user' ? <User /> : mode === 'edit' ? <Edit /> : mode === 'introduce' ? <Introduce /> : undefined}

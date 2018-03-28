@@ -1,0 +1,10 @@
+.phrase__container {
+  position: relative;
+  margin: 0 auto 30;
+  text-align: center;
+  display: table
+}
+.phrase__aligner {
+  display: table-cell;
+  vertical-align: middle;
+}
