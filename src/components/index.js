@@ -21,6 +21,7 @@ import SideBoard from './SideBoard/SideBoard'
 import Trench from './Trench/Trench'
 import User from './User/User'
 import UserInfo from './UserInfo/UserInfo'
+import UserOrder from './UserOrder/UserOrder'
 
 export {
   AlertableButton,
@@ -45,5 +46,6 @@ export {
   SideBoard,
   Trench,
   User,
-  UserInfo
+  UserInfo,
+  UserOrder
 }

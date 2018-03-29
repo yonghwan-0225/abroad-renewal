@@ -66,6 +66,10 @@ export function mergeIfExist (target, option) {
   if (option) return deepCopy(target, option)
   else return target
 }
+export function getCurrentTime() {
+  const date = new Date()
+  return date.getFullYear() + '-' + paddingZero(date.getMonth() + 1) + '-' + paddingZero(date.getDate()) + ' ' + paddingZero(date.getHours()) + ':' + paddingZero(date.getMinutes()) + ':' + paddingZero(date.getSeconds())
+}
 export function excType2String (typeNo) {
   switch(typeNo) {
     case 1:

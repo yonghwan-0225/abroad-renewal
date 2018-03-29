@@ -149,14 +149,12 @@ class Exchange extends Component {
     }
   }
   render () {
-    const { loaded, entry, excData, measure, serviceRate } = this.props
+    const { loaded, entry, excData, serviceRate } = this.props
     if (!loaded) return <div>　</div>
     const { selectedMoney, inputMode, moneyInput, moneyExchanged, moneyToCompare, moneyInputFocused, errMessage } = this.state
-    const selectedMeasure = measure[selectedMoney]
-    const measureToShow = selectedMeasure !== 1 ? selectedMeasure : ''
     const sign = {
-      fromW: `₩ ≫ ${measureToShow}${selectedMoney}`,
-      toW: `${measureToShow}${selectedMoney} ≫ ₩`
+      fromW: `₩ ≫ ${selectedMoney}`,
+      toW: `${selectedMoney} ≫ ₩`
     }
     const signAlias = {
       [sign.fromW]: 'fromW',

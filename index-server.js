@@ -180,28 +180,46 @@ server.get('/api/renew', (req, res) => {
   // })
 })
 server.post('/api/login', (req, res) => {
-  request.post(businessURL + '/api/login').type('form').send(req.body).end((err, proxyRes) => {
-    if (err) {
-        res.json({
-          status: false,
-          message: 'Business서버가 고장났습니다.'
-        })
-      }
-    res.json(proxyRes.body)
-  })
-  // res.json({
-  //   status: true,
-  //   userData: {
-  //     id: 'liebebe',
-  //     pw: '12341234',
-  //     name: '김연재',
-  //     email: 'liebe3060@gmail.com',
-  //     phone: '01023983060',
-  //     address: '경기도 군포시 산본동 1052 주공11단지 1103동 311호'
-  //   },
-  //   orderData: [
-  //   ]
+  // request.post(businessURL + '/api/login').type('form').send(req.body).end((err, proxyRes) => {
+  //   if (err) {
+  //       res.json({
+  //         status: false,
+  //         message: 'Business서버가 고장났습니다.'
+  //       })
+  //     }
+  //   res.json(proxyRes.body)
   // })
+  res.json({
+    status: true,
+    userData: {
+      id: 'liebebe',
+      pw: '12341234',
+      name: '김연재',
+      email: 'liebe3060@gmail.com',
+      phone: '01023983060',
+      address: '경기도 군포시 산본동 1052 주공11단지 1103동 311호'
+    },
+    orderData: [
+      {
+        orderNo: 3714,
+        orderType: 1,
+        status: '배송완료',
+        amount: '1500000',
+        serviceRate: '1075.52',
+        total: '1395',
+        time: '2018-03-29 16:04:52'
+      },
+      {
+        orderNo: 4082,
+        orderType: 2,
+        status: '결제완료',
+        amount: '120',
+        serviceRate: '1057.07',
+        total: '126900',
+        time: '2018-04-10 10:52:08'
+      }
+    ]
+  })
 })
 server.post('/api/join', (req, res) => {  // for test
   request.post(businessURL + '/api/join').type('form').send(req.body).end((err, proxyRes) => {

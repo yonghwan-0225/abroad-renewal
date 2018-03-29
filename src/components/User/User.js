@@ -15,6 +15,7 @@ class User extends Component {
       <div>
         <UserInfo />
         <Bar />
+        
       </div>
     )
   }
