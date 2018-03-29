@@ -21,12 +21,14 @@ class App extends Component {
     clearInterval(this.timer)
   }
   renew () {
-    request.get(excRenewURL).accept('application/json').end((err, { body }) => {
+    request.get(excRenewURL).query({ dummy: String(parseInt(Math.random() * 100000000)) }).accept('application/json').end((err, res) => {
       if (err) return
-      const { entry, excData, measure, serviceRate } = body
-      this.props.onRenew({
-        entry, excData: sortExc(excData), measure, serviceRate
-      })
+      const { status, message, entry, excData, measure, serviceRate } = res.body
+      if (status) {
+        this.props.onRenew({
+          entry, excData: sortExc(excData), measure, serviceRate
+        })
+      }
     })
   }
   render () {

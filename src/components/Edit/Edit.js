@@ -45,13 +45,14 @@ class Edit extends Component {
       setBrake()
       request.post(editURL).type('form').send(params).end((err, res) => {
         if (err) {
-          clearBrake('서버가 고장났습니다')
+          this.update({ errMessage: 'Business서버가 고장났습니다' })
+          clearBrake()
           return
         }
         const { status, message } = res.body
         if (status) {
           setModeUser()
-          clearBrake('회원정보가 수정되었습니다')
+          clearBrake('수정되었습니다')
         } else {
           this.update({ errMessage: message })
           clearBrake()
@@ -144,7 +145,7 @@ const style = {
         height: 45,
         margin: '0 auto 40',
         padding: '0 10',
-        backgroundColor: '#CD3855',
+        backgroundColor: '#CD3855'
       },
       text: {
         color: 'white'

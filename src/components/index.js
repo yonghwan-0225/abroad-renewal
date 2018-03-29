@@ -18,6 +18,7 @@ import Login from './Login/Login'
 import MainBoard from './MainBoard/MainBoard'
 import Phrase from './Phrase/Phrase'
 import SideBoard from './SideBoard/SideBoard'
+import Trench from './Trench/Trench'
 import User from './User/User'
 import UserInfo from './UserInfo/UserInfo'
 
@@ -42,6 +43,7 @@ export {
   MainBoard,
   Phrase,
   SideBoard,
+  Trench,
   User,
   UserInfo
 }

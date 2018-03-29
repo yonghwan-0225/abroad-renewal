@@ -11,11 +11,11 @@ AlertableButton.propTypes = {
   errMessage: PropTypes.string,
   onClick: PropTypes.func,
   style: PropTypes.object,
-  className: PropTypes.obejct
+  className: PropTypes.object
 }
 AlertableButton.defaultProps = {
-  className: {},
-  style: {}
+  style: {},
+  className: {}
 }
 export default AlertableButton
 const defaultClassName = {

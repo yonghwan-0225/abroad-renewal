@@ -4,7 +4,7 @@ import { LabeledInput } from '..'
 import './Comparator.css'
 
 const Comparator = ({ moneyType, moneyInput, exchangedAbroad, exchangedToCompare, compareBankName }) => (
-  <div className='comparator' style={{ display: exchangedToCompare ? 'block' : 'none' }}>
+  <div className='comparator' >
     <LabeledInput label={<div>{compareBankName}에서 환전하면</div>} value={exchangedToCompare + ' ' + moneyType} readOnly={true} style={style.exchangedToCompare} />
     <LabeledInput label={<div><img src='img/abroad.png' height='16px' style={{ position: 'relative', top: 2 }} />에서 환전하면</div>} value={exchangedAbroad + ' ' + moneyType} readOnly={true} style={style.exchangedAbroad} />
   </div>

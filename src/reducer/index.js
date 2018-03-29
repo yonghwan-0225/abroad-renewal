@@ -36,7 +36,7 @@ export function board (state = boardInitState, action) {
       return deepCopy(state, {
         [action.board]: {
           brake: false,
-          alertMessage: action.alertMessage
+          alertMessage: action.alertMessage || ''
         }
       })
     case ACTION.CHANGE_MODE:
@@ -78,6 +78,16 @@ export function user (state = userInitState, action) {
     case ACTION.LOG_OUT:
       return {
         login: false
+      }
+    case ACTION.RENEW_ORDER_DATA:
+      return {
+        login: state.login,
+        id: state.id,
+        name: state.name,
+        email: state.email,
+        phone: state.phone,
+        address: state.address,
+        order: action.nextOrderData
       }
     default:
       return state

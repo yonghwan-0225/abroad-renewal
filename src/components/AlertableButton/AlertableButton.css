@@ -1,6 +1,6 @@
 .alertable-button__button__container--normal {
   text-align: center;
-  border-radius: 5;
+  border-radius: 5px;
   cursor: pointer;
   transition: 0.3s;
   display: table;
@@ -11,13 +11,13 @@
 }
 .alertable-button__button__container--err {
   text-align: center;
-  border-radius: 5;
+  border-radius: 5px;
   cursor: pointer;
   transition: 0.3s;
   display: table;
   cursor: not-allowed;
 }
-.alertable-button__button__text--normal {
+.alertable-button__button__text--err {
   display: table-cell;
   vertical-align: middle;
 }

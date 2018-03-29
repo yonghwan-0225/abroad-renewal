@@ -39,7 +39,8 @@ class Join extends Component {
       setBrake()
       request.post(joinURL).type('form').send(params).end((err, res) => {
         if (err) {
-          clearBrake('서버가 고장났습니다')
+          this.update({ errMessage: 'Business서버가 고장났습니다' })
+          clearBrake()
           return
         }
         const { status, message } = res.body
@@ -127,7 +128,7 @@ const style = {
         height: 45,
         margin: '0 auto 40',
         padding: '0 10',
-        backgroundColor: '#CD3855',
+        backgroundColor: '#CD3855'
       },
       text: {
         color: 'white'
