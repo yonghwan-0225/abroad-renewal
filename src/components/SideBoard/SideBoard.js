@@ -35,7 +35,7 @@ SideBoard.propTypes = {
 SideBoard.defaultProps = {
   style: {
     logoImg: {
-      marginBottom: 20,
+      marginBottom: 30,
       cursor: 'pointer'
     }
   }

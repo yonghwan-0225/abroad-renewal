@@ -5,7 +5,7 @@
   margin: 0 auto 10;
   border: 1px solid rgb(199, 199, 199);
   border-radius: 5px;
-  transition: 0.3s;
+  transition: 0.25s;
   overflow: hidden;
   cursor: pointer;
 }

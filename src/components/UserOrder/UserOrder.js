@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { excType2String, excType2From, excType2To, insertComma } from '../../util'
+import { excTypeFullString, excTypeFormerString, excTypeAfterString, insertComma } from '../../util'
 import { LabeledInput } from '..'
 import './UserOrder.css'
 
@@ -24,10 +24,10 @@ class UserOrder extends Component {
       <div className={this.state.toggle ? 'user-order__container--toggle' : 'user-order__container'} onClick={this.handleClick} >
         <LabeledInput label='환전번호' value={orderNo} style={style.labeledInput} readOnly={true} />
         <LabeledInput label='상태' value={status} style={style.labeledInput} readOnly={true} />
-        <LabeledInput label='요청환전종류' value={excType2String(orderType)} style={style.labeledInput} readOnly={true} />
+        <LabeledInput label='요청환전종류' value={excTypeFullString(orderType)} style={style.labeledInput} readOnly={true} />
         <LabeledInput label='제공환율' value={serviceRate} style={style.labeledInput} readOnly={true} />
-        <LabeledInput label='요청환전금액' value={insertComma(amount)} style={style.labeledInputWithFooter} footer={excType2From(orderType)} readOnly={true} />
-        <LabeledInput label='환전된금액' value={insertComma(total)} style={style.labeledInputWithFooter} footer={excType2To(orderType)} readOnly={true} />
+        <LabeledInput label='결제금액' value={insertComma(amount)} style={style.labeledInputWithFooter} footer={excTypeFormerString(orderType)} readOnly={true} />
+        <LabeledInput label='환전금액' value={insertComma(total)} style={style.labeledInputWithFooter} footer={excTypeAfterString(orderType)} readOnly={true} />
         <LabeledInput label='요청일시' value={time} style={style.labeledInputWide} readOnly={true} />
       </div>
     )
@@ -40,8 +40,8 @@ const mapDispatchToProps = dispatch => ({
 
 })
 UserOrder.propTypes = {
-  orderNo: PropTypes.number.isRequired,
-  orderType: PropTypes.number.isRequired,
+  orderNo: PropTypes.node.isRequired,
+  orderType: PropTypes.node.isRequired,
   status: PropTypes.string.isRequired,
   amount: PropTypes.string.isRequired,
   serviceRate: PropTypes.string.isRequired,

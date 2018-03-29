@@ -92,7 +92,9 @@ export function user (state = userInitState, action) {
         email: state.email,
         phone: state.phone,
         address: state.address,
-        orderData: action.nextOrderData
+        orderData: deepCopy(state.orderData, {
+          [state.orderData.length]: action.newOrderData
+        })
       }
     default:
       return state

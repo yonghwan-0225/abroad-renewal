@@ -24,7 +24,6 @@ class User extends Component {
 }
 const mapStateToProps = state => ({
   orderData: state.user.orderData
-
 })
 const mapDispatchToProps = dispatch => ({
 

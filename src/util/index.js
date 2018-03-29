@@ -70,63 +70,77 @@ export function getCurrentTime() {
   const date = new Date()
   return date.getFullYear() + '-' + paddingZero(date.getMonth() + 1) + '-' + paddingZero(date.getDate()) + ' ' + paddingZero(date.getHours()) + ':' + paddingZero(date.getMinutes()) + ':' + paddingZero(date.getSeconds())
 }
-export function excType2String (typeNo) {
-  switch(typeNo) {
+function paddingZero (date) {
+  if (date < 10) return '0' + date
+  else return date
+}
+export function excTypeFullString (typeNo) {
+  switch(Number(typeNo)) {
     case 1:
       return '₩ >> $'
     case 2:
-      return '₩ >> €'
-    case 3:
-      return '₩ >> 元'
-    case 4:
-      return '₩ >> ￥'
-    case 5:
       return '$ >> ₩'
-    case 6:
+    case 3:
+      return '₩ >> €'
+    case 4:
       return '€ >> ₩'
-    case 7:
+    case 5:
+      return '₩ >> 元'
+    case 6:
       return '元 >> ₩'
+    case 7:
+      return '₩ >> ￥'
     case 8:
       return '￥ >> ₩'
     default:
       return 'undefined'
   }
 }
-export function excType2From (typeNo) {
-  switch(typeNo) {
+export function excTypeFormerString (typeNo) {
+  switch(Number(typeNo)) {
     case 1:
-    case 2:
-    case 3:
-    case 4:
       return '₩'
-    case 5:
+    case 2:
       return '$'
-    case 6:
+    case 3:
+      return '₩'
+    case 4:
       return '€'
-    case 7:
+    case 5:
+      return '₩'
+    case 6:
       return '元'
+    case 7:
+      return '₩'
     case 8:
       return '￥'
     default:
       return 'undefined'
   }
 }
-export function excType2To (typeNo) {
-  switch(typeNo) {
+export function excTypeAfterString (typeNo) {
+  switch(Number(typeNo)) {
     case 1:
       return '$'
     case 2:
-      return '€'
+      return '₩'
     case 3:
-      return '元'
+      return '€'
     case 4:
-      return '￥'
+      return '₩'
     case 5:
+      return '元'
     case 6:
+      return '₩'
     case 7:
+      return '￥'
     case 8:
       return '₩'
     default:
       return 'undefined'
   }
+}
+export function excTypeNumber (moneyType, inputMode) {
+  const typeNumber = moneyType === '$' ? 1 : moneyType === '€' ? 3 : moneyType === '元' ? 5 : moneyType === '￥' ? 7 : undefined
+  return inputMode === 'toW' ? typeNumber + 1 : typeNumber
 }

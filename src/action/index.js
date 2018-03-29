@@ -27,9 +27,9 @@ export const renewExc = ({ entry, excData, measure, serviceRate }) => ({
   measure,
   serviceRate
 })
-export const renewOrderData = ({ nextOrderData }) => ({
+export const renewOrderData = ({ newOrderData }) => ({
   type: RENEW_ORDER_DATA,
-  nextorderData
+  newOrderData
 })
 export const login = ({ userData, orderData }) => ({
   type: LOG_IN,

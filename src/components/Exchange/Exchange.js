@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import request from 'superagent'
 import { excLimitAmount, exchangeURL } from '../../config'
-import { insertComma } from '../../util'
+import { insertComma, excTypeNumber, getCurrentTime } from '../../util'
 import { setBrake, clearBrake, renewOrderData } from '../../action'
 import { ButtonList, ExcTable, LabeledInput, AlertPhrase, Trench, Comparator, AlertableButton } from '..'
 
@@ -108,24 +108,33 @@ class Exchange extends Component {
       this.update({ errMessage: '로그인이 필요합니다' })
       return
     }
-    const { setBrake, clearBrake, onExchange } = this.props
-    const { moneyInput } = this.state
+    const { serviceRate, setBrakeAll, clearBrakeAll, onExchange } = this.props
+    const { selectedMoney, inputMode, moneyInput, moneyExchanged } = this.state
     const params = {
-      amount: moneyInput
+      orderType: excTypeNumber(selectedMoney, inputMode),
+      amount: moneyInput,
+      serviceRate: serviceRate[selectedMoney][inputMode],
+      total: moneyExchanged,
+      time: getCurrentTime()
     }
-    setBrake()
+    setBrakeAll()
     request.post(exchangeURL).type('form').send(params).end((err, res) => {
       if (err) {
-        this.update({ errMessage: 'Business서버가 고장났습니다' })
-        clearBrake()
+        this.update({ errMessage: 'Business서버 응답 오류' })
+        clearBrakeAll()
         return
       }
-      const { status, message, nextOrderData } = res.body
+      const { status, message, newOrderData } = res.body
       if (status) {
-        clearBrake('환전요청 완료되었습니다')
-        onExchange({ nextOrderData })
+        clearBrakeAll('환전요청 완료되었습니다')
+        onExchange({ newOrderData })
+        this.update({
+          moneyInput: '',
+          moneyExchanged: '',
+          moneyToCompare: ''
+        })
       } else {
-        clearBrake()
+        clearBrakeAll()
         this.update({ errMessage: message })
       }
     })
@@ -194,7 +203,17 @@ const mapStateToProps = state => ({
 })
 const mapDispatchToProps = dispatch => ({
   setBrake: () => dispatch(setBrake({ board: 'mainBoard' })),
+  setBrakeAll: () => {
+    dispatch(setBrake({ board: 'mainBoard' }))
+    dispatch(setBrake({ board: 'sideBoard' }))
+    return
+  },
   clearBrake: alertMessage => dispatch(clearBrake({ board: 'mainBoard', alertMessage })),
+  clearBrakeAll: alertMessage => {
+    dispatch(clearBrake({ board: 'mainBoard', alertMessage }))
+    dispatch(clearBrake({ board: 'sideBoard', alertMessage: '' }))
+    return
+  },
   onExchange: payload => dispatch(renewOrderData(payload))
 })
 Exchange.propTypes = {
@@ -205,7 +224,9 @@ Exchange.propTypes = {
   serviceRate: PropTypes.object.isRequired,
   login: PropTypes.bool.isRequired,
   setBrake: PropTypes.func.isRequired,
+  setBrakeAll: PropTypes.func.isRequired,
   clearBrake: PropTypes.func.isRequired,
+  clearBrakeAll: PropTypes.func.isRequired,
   onExchange: PropTypes.func.isRequired
 }
 Exchange.defaultProps = {

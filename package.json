@@ -5,6 +5,7 @@
   "main": "index-server.js",
   "scripts": {
     "start": "nodemon",
+    "start-solo": "nodemon index-server-solo.js",
     "dev": "webpack --watch"
   },
   "keywords": [],
