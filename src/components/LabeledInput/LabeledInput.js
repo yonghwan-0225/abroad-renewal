@@ -20,7 +20,7 @@ const LabeledInput = ({ label, value, footer, onClick, onChange, onFocus, onBlur
 }
 LabeledInput.propTypes = {
   label: PropTypes.node.isRequired,
-  value: PropTypes.string,
+  value: PropTypes.node,
   footer: PropTypes.node,
   onClick: PropTypes.func,
   onChange: PropTypes.func,

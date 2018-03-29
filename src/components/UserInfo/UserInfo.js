@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { changeMode, logout } from '../../action'
+import './UserInfo.css'
 
 const UserInfo = ({ id, name, setModeEdit, setModeLogin, onLogout }) => {
   function handleEditClick () {

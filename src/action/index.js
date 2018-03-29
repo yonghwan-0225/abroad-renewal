@@ -38,7 +38,7 @@ export const login = ({ userData, orderData }) => ({
   email: userData.email,
   phone: userData.phone,
   address: userData.address,
-  order: orderData
+  orderData: orderData
 })
 export const logout = () => ({
   type: LOG_OUT

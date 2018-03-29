@@ -1,38 +1,38 @@
-.user-info__container: {
+.user-info__container {
   width: 260;
   height: 50;
   margin: 0 auto 40;
 }
-.user-info__grade-img: {
+.user-info__grade-img {
   float: left;
   height: 100%;
 }
-.user-info__name: {
+.user-info__name {
   height: 50%;
   margin-left: 70;
   text-align: left;
   font-weight: 600;
   cursor: default;
 }
-.user-info__id: {
+.user-info__id {
   height: 50%;
   margin-left: 70;
   text-align: left;
   cursor: default;
 }
-.user-info__imgWrapper: {
+.user-info__img-wrapper {
   float: right;
   width: 65;
   height: 37;
   padding-top: 13;
 }
-.user-info__editImg: {
+.user-info__edit-img {
   float: left;
   height: 25;
   margin-right: 15;
   cursor: pointer;
 }
-.user-info__logoutImg: {
+.user-info__logout-img {
   float: left;
   height: 25;
   cursor: pointer;

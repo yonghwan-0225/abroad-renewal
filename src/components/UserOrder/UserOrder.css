@@ -1,0 +1,23 @@
+.user-order__container {
+  position: relative;
+  width: 300px;
+  height: 60px;
+  margin: 0 auto 10;
+  border: 1px solid rgb(199, 199, 199);
+  border-radius: 5px;
+  transition: 0.3s;
+  overflow: hidden;
+  cursor: pointer;
+}
+.user-order__container--toggle {
+  position: relative;
+  width: 300px;
+  height: 240px;
+  margin: 0 auto 10;
+  border: 1px solid goldenrod;
+  box-shadow: 0 0 3px goldenrod;
+  border-radius: 5px;
+  transition: 0.6s;
+  overflow: hidden;
+  cursor: pointer;
+}

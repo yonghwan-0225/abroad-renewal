@@ -22,7 +22,12 @@ const excInitState = {
 }
 const userInitState = {
   login: false,
-  order: []
+  id: '',
+  name: '',
+  email: '',
+  phone: '',
+  address: '',
+  orderData: []
 }
 export function board (state = boardInitState, action) {
   switch(action.type) {
@@ -73,7 +78,7 @@ export function user (state = userInitState, action) {
         email: action.email,
         phone: action.phone,
         address: action.address,
-        order: action.order
+        orderData: action.orderData
       }
     case ACTION.LOG_OUT:
       return {
@@ -87,7 +92,7 @@ export function user (state = userInitState, action) {
         email: state.email,
         phone: state.phone,
         address: state.address,
-        order: action.nextOrderData
+        orderData: action.nextOrderData
       }
     default:
       return state

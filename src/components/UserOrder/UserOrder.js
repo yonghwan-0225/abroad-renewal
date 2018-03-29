@@ -1,13 +1,38 @@
-import React from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import { excType2String, excType2From, excType2To, insertComma } from '../../util'
+import { LabeledInput } from '..'
 import './UserOrder.css'
 
-const UserOrder = ({ }) => (
-  <div className='user-order__container'>
-
-  </div>
-)
+class UserOrder extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      toggle: false
+    }
+    this.handleClick = this.handleClick.bind(this)
+  }
+  handleClick () {
+    this.setState(prevState => ({
+      toggle: !prevState.toggle
+    }))
+  }
+  render () {
+    const { orderNo, orderType, status, amount, serviceRate, total, time } = this.props
+    return (
+      <div className={this.state.toggle ? 'user-order__container--toggle' : 'user-order__container'} onClick={this.handleClick} >
+        <LabeledInput label='환전번호' value={orderNo} style={style.labeledInput} readOnly={true} />
+        <LabeledInput label='상태' value={status} style={style.labeledInput} readOnly={true} />
+        <LabeledInput label='요청환전종류' value={excType2String(orderType)} style={style.labeledInput} readOnly={true} />
+        <LabeledInput label='제공환율' value={serviceRate} style={style.labeledInput} readOnly={true} />
+        <LabeledInput label='요청환전금액' value={insertComma(amount)} style={style.labeledInputWithFooter} footer={excType2From(orderType)} readOnly={true} />
+        <LabeledInput label='환전된금액' value={insertComma(total)} style={style.labeledInputWithFooter} footer={excType2To(orderType)} readOnly={true} />
+        <LabeledInput label='요청일시' value={time} style={style.labeledInputWide} readOnly={true} />
+      </div>
+    )
+  }
+}
 const mapStateToProps = state => ({
 
 })
@@ -15,9 +40,102 @@ const mapDispatchToProps = dispatch => ({
 
 })
 UserOrder.propTypes = {
-
+  orderNo: PropTypes.number.isRequired,
+  orderType: PropTypes.number.isRequired,
+  status: PropTypes.string.isRequired,
+  amount: PropTypes.string.isRequired,
+  serviceRate: PropTypes.string.isRequired,
+  total: PropTypes.string.isRequired,
+  time: PropTypes.string.isRequired
 }
 UserOrder.defaultProps = {
 
 }
 export default connect(mapStateToProps, mapDispatchToProps)(UserOrder)
+const style = {
+  labeledInput: {
+    container: {
+      float: 'left',
+      width: '150px',
+      height: '60px',
+      margin: 0,
+      border: 'none'
+    },
+    label: {
+      width: '135px',
+      height: '15px',
+      paddingTop: '10px',
+      paddingLeft: '15px',
+      fontSize: '0.7rem',
+      cursor: 'inherit'
+    },
+    input: {
+      top: '25px',
+      width: '150px',
+      height: '35px',
+      paddingLeft: '5px',
+      paddingRight: '15px',
+      fontSize: '1.1rem',
+      cursor: 'inherit'
+    }
+  },
+  labeledInputWithFooter: {
+    container: {
+      float: 'left',
+      width: '150px',
+      height: '60px',
+      margin: 0,
+      border: 'none'
+    },
+    label: {
+      width: '135px',
+      height: '15px',
+      paddingTop: '10px',
+      paddingLeft: '15px',
+      fontSize: '0.7rem',
+      cursor: 'inherit'
+    },
+    input: {
+      top: '25px',
+      width: '150px',
+      height: '35px',
+      paddingLeft: '5px',
+      paddingRight: '35px',
+      fontSize: '1.1rem',
+      cursor: 'inherit'
+    },
+    footer: {
+      top: '25px',
+      width: '30px',
+      height: '35px',
+      paddingRight: '5px',
+      fontSize: '1.1rem',
+      cursor: 'inherit'
+    }
+  },
+  labeledInputWide: {
+    container: {
+      float: 'left',
+      width: '300px',
+      height: '60px',
+      margin: 0,
+      border: 'none'
+    },
+    label: {
+      width: '135px',
+      height: '15px',
+      paddingTop: '10px',
+      paddingLeft: '15px',
+      fontSize: '0.7rem',
+      cursor: 'inherit'
+    },
+    input: {
+      top: '25px',
+      width: '300px',
+      height: '35px',
+      fontSize: '1.1rem',
+      textAlign: 'center',
+      cursor: 'inherit'
+    }
+  }
+}

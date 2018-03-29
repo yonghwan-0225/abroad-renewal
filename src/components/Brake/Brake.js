@@ -17,6 +17,7 @@ class Brake extends Component {
     if (brake) {
       this.setState({ display: 'block' })
       this.loadingWave()
+      clearInterval(this.timer)
       this.timer = setInterval(() => {
         this.loadingWave()
       }, 800)

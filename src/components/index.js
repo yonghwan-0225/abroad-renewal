@@ -1,5 +1,4 @@
 import AlertableButton from './AlertableButton/AlertableButton'
-import AlertPhrase from './AlertPhrase/AlertPhrase'
 import App from './App/App'
 import Bar from './Bar/Bar'
 import Brake from './Brake/Brake'
@@ -25,7 +24,6 @@ import UserOrder from './UserOrder/UserOrder'
 
 export {
   AlertableButton,
-  AlertPhrase,
   App,
   Bar,
   Brake,
