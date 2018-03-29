@@ -15,7 +15,7 @@ server.get('/api/renew', (req, res) => {
     if (err) {
       res.json({
         status: false,
-        message: 'Crawling서버가 고장났습니다'
+        message: 'Crawling서버 응답 오류'
       })
     } else {
       res.json(proxyRes.body)
@@ -27,7 +27,7 @@ server.post('/api/login', (req, res) => {
     if (err) {
         res.json({
           status: false,
-          message: 'Business서버가 고장났습니다'
+          message: 'Business서버 응답 오류'
         })
       }
     res.json(proxyRes.body)
@@ -38,7 +38,7 @@ server.post('/api/join', (req, res) => {
     if (err) {
       res.json({
         status: false,
-        message: 'Business서버가 고장났습니다'
+        message: 'Business서버 응답 오류'
       })
     }
     res.json(proxyRes.body)
@@ -49,7 +49,7 @@ server.post('/api/edit', (req, res) => {
     if (err) {
         res.json({
           status: false,
-          message: 'Business서버가 고장났습니다'
+          message: 'Business서버 응답 오류'
         })
       }
     res.json(proxyRes.body)
@@ -60,7 +60,7 @@ server.post('/api/exchange', (req, res) => {
     if (err) {
         res.json({
           status: false,
-          message: 'Business서버가 고장났습니다'
+          message: 'Business서버 응답 오류'
         })
       }
     res.json(proxyRes.body)
