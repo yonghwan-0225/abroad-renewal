@@ -3,7 +3,7 @@ import { deepCopy } from '../util'
 
 const boardInitState = {
   sideBoard: {
-    mode: 'login',
+    mode: 'reception',
     brake: false,
     alertMessage: ''
   },

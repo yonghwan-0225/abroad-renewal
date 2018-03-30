@@ -28,6 +28,8 @@ class App extends Component {
         this.props.onRenew({
           entry, excData: sortExc(excData), measure, serviceRate
         })
+      } else {
+        console.log(message)
       }
     })
   }

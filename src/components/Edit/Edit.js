@@ -24,6 +24,7 @@ class Edit extends Component {
     this.update = this.update.bind(this)
   }
   handleIDClick () {
+    console.log('check')
     this.update({ errMessage: '아이디는 바꿀 수 없습니다' })
   }
   handleEditClick () {
@@ -95,7 +96,7 @@ class Edit extends Component {
     const { inputID, inputPW, inputNewPW, inputName, inputEmail, inputPhone, inputAddress, errMessage } = this.state
     return (
       <div>
-        <Input value={inputID} placeholder=' 아이디' onClick={this.handleIDClick} type='id' readOnly />
+        <Input value={inputID} placeholder=' 아이디' onClick={this.handleIDClick} type='id' readOnly={true} />
         <Input value={inputPW} placeholder=' 비밀번호' onChange={this.update} type='password' />
         <Input value={inputNewPW} placeholder=' 새 비밀번호' onChange={this.update} type='new-password' />
         <Input value={inputName} placeholder=' 이름' onChange={this.update} type='name' />

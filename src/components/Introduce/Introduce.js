@@ -24,7 +24,7 @@ const Introduce = ({ setModeLogin }) => {
   )
 }
 const mapDispatchToProps = dispatch => ({
-  setModeLogin: () => dispatch(changeMode({ board: 'sideBoard', mode: 'login' }))
+  setModeLogin: () => dispatch(changeMode({ board: 'sideBoard', mode: 'reception' }))
 })
 Introduce.propTypes = {
   setModeLogin: PropTypes.func.isRequired

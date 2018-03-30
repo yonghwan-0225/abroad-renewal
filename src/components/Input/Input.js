@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import './Input.css'
 
-const Input = ({ value, placeholder, onChange, type }) => {
+const Input = ({ value, placeholder, onChange, onClick, type, readOnly }) => {
   function handleOnChange (e) {
     switch(type) {
       case 'id':
@@ -100,15 +100,18 @@ const Input = ({ value, placeholder, onChange, type }) => {
         return
     }
   }
-  return type !== 'address' ? <input value={value} placeholder={placeholder} onChange={handleOnChange} className='basic-input' type={type === 'password' || type === 'new-password' ? 'password' : 'text'} /> : <textarea value={value} placeholder={placeholder} onClick={inputAddress} className='wide-input' readOnly />
+  return type !== 'address' ? <input value={value} placeholder={placeholder} onChange={handleOnChange} onClick={onClick} className='basic-input' type={type === 'password' || type === 'new-password' ? 'password' : 'text'} readOnly={readOnly} /> : <textarea value={value} placeholder={placeholder} onClick={inputAddress} className='wide-input' readOnly />
 }
 Input.propTypes = {
   value: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
   onChange: PropTypes.func,
+  onClick: PropTypes.func,
   type: PropTypes.string.isRequired,
+  readOnly: PropTypes.bool
 }
 Input.defaultProps = {
-  type: 'text'
+  type: 'text',
+  readOnly: false
 }
 export default Input

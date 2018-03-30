@@ -108,9 +108,10 @@ class Exchange extends Component {
       this.update({ errMessage: '로그인이 필요합니다' })
       return
     }
-    const { serviceRate, setBrakeAll, clearBrakeAll, onExchange } = this.props
+    const { serviceRate, id, setBrakeAll, clearBrakeAll, onExchange } = this.props
     const { selectedMoney, inputMode, moneyInput, moneyExchanged } = this.state
     const params = {
+      id,
       orderType: excTypeNumber(selectedMoney, inputMode),
       amount: moneyInput,
       serviceRate: serviceRate[selectedMoney][inputMode],
@@ -199,7 +200,8 @@ const mapStateToProps = state => ({
   excData: state.exc.excData,
   measure: state.exc.measure,
   serviceRate: state.exc.serviceRate,
-  login: state.user.login
+  login: state.user.login,
+  id: state.user.id
 })
 const mapDispatchToProps = dispatch => ({
   setBrake: () => dispatch(setBrake({ board: 'mainBoard' })),
@@ -223,6 +225,7 @@ Exchange.propTypes = {
   measure: PropTypes.object.isRequired,
   serviceRate: PropTypes.object.isRequired,
   login: PropTypes.bool.isRequired,
+  id: PropTypes.string,
   setBrake: PropTypes.func.isRequired,
   setBrakeAll: PropTypes.func.isRequired,
   clearBrake: PropTypes.func.isRequired,

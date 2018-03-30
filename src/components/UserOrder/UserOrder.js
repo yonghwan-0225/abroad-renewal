@@ -76,6 +76,7 @@ const style = {
       paddingLeft: '5px',
       paddingRight: '15px',
       fontSize: '1.1rem',
+      fontWeight: 'bold',
       cursor: 'inherit'
     }
   },
@@ -102,6 +103,7 @@ const style = {
       paddingLeft: '5px',
       paddingRight: '35px',
       fontSize: '1.1rem',
+      fontWeight: 'bold',
       cursor: 'inherit'
     },
     footer: {
@@ -110,6 +112,7 @@ const style = {
       height: '35px',
       paddingRight: '5px',
       fontSize: '1.1rem',
+      fontWeight: 'bold',
       cursor: 'inherit'
     }
   },
@@ -135,6 +138,7 @@ const style = {
       height: '35px',
       fontSize: '1.1rem',
       textAlign: 'center',
+      fontWeight: 'bold',
       cursor: 'inherit'
     }
   }

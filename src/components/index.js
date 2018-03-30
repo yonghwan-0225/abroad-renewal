@@ -11,11 +11,10 @@ import ExcTable from './ExcTable/ExcTable'
 import ExcTableRow from './ExcTableRow/ExcTableRow'
 import Input from './Input/Input'
 import Introduce from './Introduce/Introduce'
-import Join from './Join/Join'
 import LabeledInput from './LabeledInput/LabeledInput'
-import Login from './Login/Login'
 import MainBoard from './MainBoard/MainBoard'
 import Phrase from './Phrase/Phrase'
+import Reception from './Reception/Reception'
 import SideBoard from './SideBoard/SideBoard'
 import Trench from './Trench/Trench'
 import User from './User/User'
@@ -36,11 +35,10 @@ export {
   ExcTableRow,
   Input,
   Introduce,
-  Join,
   LabeledInput,
-  Login,
   MainBoard,
   Phrase,
+  Reception,
   SideBoard,
   Trench,
   User,
