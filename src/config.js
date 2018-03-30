@@ -1,5 +1,5 @@
-const baseURL = 'http://localhost:17315'
-//const baseURL = 'http://10.1.41.241:17315'
+//const baseURL = 'http://localhost:17315'
+const baseURL = 'http://10.1.41.241:17315'
 
 export const excRenewCycle = 60000
 export const excRenewURL = `${baseURL}/api/renew`

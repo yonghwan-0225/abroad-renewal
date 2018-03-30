@@ -25,12 +25,13 @@ server.get('/api/renew', (req, res) => {
 server.post('/api/login', (req, res) => {
   request.post(businessURL + '/api/login').type('form').send(req.body).end((err, proxyRes) => {
     if (err) {
-        res.json({
-          status: false,
-          message: 'Business서버 응답 오류'
-        })
-      }
-    res.json(proxyRes.body)
+      res.json({
+        status: false,
+        message: 'Business서버 응답 오류'
+      })
+    } else {
+      res.json(proxyRes.body)
+    }
   })
 })
 server.post('/api/join', (req, res) => {
@@ -40,30 +41,33 @@ server.post('/api/join', (req, res) => {
         status: false,
         message: 'Business서버 응답 오류'
       })
+    } else {
+      res.json(proxyRes.body)
     }
-    res.json(proxyRes.body)
   })
 })
 server.post('/api/edit', (req, res) => {
   request.post(businessURL + '/api/edit').type('form').send(req.body).end((err, proxyRes) => {
     if (err) {
-        res.json({
-          status: false,
-          message: 'Business서버 응답 오류'
-        })
-      }
-    res.json(proxyRes.body)
+      res.json({
+        status: false,
+        message: 'Business서버 응답 오류'
+      })
+    } else {
+      res.json(proxyRes.body)
+    }
   })
 })
 server.post('/api/exchange', (req, res) => {
   request.post(businessURL + '/api/exchange').type('form').send(req.body).end((err, proxyRes) => {
     if (err) {
-        res.json({
-          status: false,
-          message: 'Business서버 응답 오류'
-        })
-      }
-    res.json(proxyRes.body)
+      res.json({
+        status: false,
+        message: 'Business서버 응답 오류'
+      })
+    } else {
+      res.json(proxyRes.body)
+    }
   })
 })
 server.post('/callback/address', (req, res) => {  // address callback

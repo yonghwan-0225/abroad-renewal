@@ -24,8 +24,10 @@ class Edit extends Component {
     this.update = this.update.bind(this)
   }
   handleIDClick () {
-    console.log('check')
     this.update({ errMessage: '아이디는 바꿀 수 없습니다' })
+  }
+  handleIDClick () {
+    this.update({ errMessage: '이름은 앵간하면 바꿀 수 없습니다' })
   }
   handleEditClick () {
     const { setBrake, clearBrake, setModeUser } = this.props
@@ -99,7 +101,7 @@ class Edit extends Component {
         <Input value={inputID} placeholder=' 아이디' onClick={this.handleIDClick} type='id' readOnly={true} />
         <Input value={inputPW} placeholder=' 비밀번호' onChange={this.update} type='password' />
         <Input value={inputNewPW} placeholder=' 새 비밀번호' onChange={this.update} type='new-password' />
-        <Input value={inputName} placeholder=' 이름' onChange={this.update} type='name' />
+        <Input value={inputName} placeholder=' 이름' onClick={this.handleNameClick} type='name' readOnly={true} />
         <Input value={inputEmail} placeholder=' 이메일' onChange={this.update} type='email' />
         <Input value={inputPhone} placeholder=' 전화번호' onChange={this.update} type='phone' />
         <Input value={inputAddress} placeholder=' 주소' onChange={this.update} type='address' />
