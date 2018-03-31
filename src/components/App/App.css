@@ -1,15 +1,23 @@
 .app {
   position: absolute;
+  width: 397px;
   left: calc(50% - 188px);
-  top: calc(50% - 400px);
+  top: calc(30% - 200px);
 }
-@media (max-height: 800px) {
+@media (max-height: 670px) {
   .app {
     top: 0px;
   }
 }
 @media (min-width: 900px) {
   .app {
-    left: calc(50% - 385px);
+    width: 794px;
+    left: calc(50% - 387px);
+  }
+}
+@media (min-width: 1300px) {
+  .app {
+    width: 1191px;
+    left: calc(50% - 585px)
   }
 }

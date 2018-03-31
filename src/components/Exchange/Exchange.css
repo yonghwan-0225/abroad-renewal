@@ -1,0 +1,26 @@
+.exchange__container {
+  position: relative;
+  height: 560px;
+  transition: 0.6s;
+  overflow: hidden;
+}
+.exchange__container--spread {
+  position: relative;
+  height: 800px;
+  transition: 0.6s;
+  overflow: hidden;
+}
+.comparator__container {
+  position: relative;
+  top: 200px;
+  width: 300px;
+  margin: 0 auto 20;
+  transition: 1.6s;
+}
+.comparator__container--spread {
+  position: relative;
+  top: 0px;
+  width: 300px;
+  margin: 0 auto 20;
+  transition: 0.8s;
+}

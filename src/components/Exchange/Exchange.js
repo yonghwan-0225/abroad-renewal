@@ -5,7 +5,8 @@ import request from 'superagent'
 import { excLimitAmount, exchangeURL } from '../../config'
 import { insertComma, excTypeNumber, getCurrentTime } from '../../util'
 import { setBrake, clearBrake, renewOrderData } from '../../action'
-import { ButtonList, ExcTable, LabeledInput, AlertPhrase, Trench, Comparator, AlertableButton } from '..'
+import { ButtonList, ExcTable, LabeledInput, AlertableButton } from '..'
+import './Exchange.css'
 
 class Exchange extends Component {
   constructor (props) {
@@ -174,22 +175,18 @@ class Exchange extends Component {
       from: inputMode === 'fromW' ? '₩' : selectedMoney,
       to: inputMode === 'fromW' ? selectedMoney : '₩'
     }
-    const moneyWithComma = {
-      input: insertComma(moneyInput),
-      exchanged: insertComma(moneyExchanged),
-      exchangedToCompare: insertComma(moneyToCompare)
-    }
-    const excButtonValue = <div><img src='img/abroad.png' height='22px' style={{ position: 'relative', top: -3, verticalAlign: 'middle' }} />에서 환전하기</div>
+    const spread = moneyExchanged !== ''
     return (
-      <div>
+      <div className={spread ? 'exchange__container--spread' : 'exchange__container'}>
         <ButtonList values={entry} selected={selectedMoney} onClick={this.handleMoneyTypeClick} style={style.moneyTypeButtonList} />
         <ExcTable selected={selectedMoney} header={sign} excData={excData[inputMode][selectedMoney]} serviceRate={serviceRate[selectedMoney]} />
         <ButtonList values={Object.values(sign)} valueAlias={signAlias} onClick={this.handleInputModeButtonClick} selected={inputMode} style={style.inputModeButtonList} />
-        <LabeledInput label='환전할 금액' value={moneyWithComma.input} footer={moneyType.from} onChange={this.handleMoneyInputChange} onFocus={this.handleMoneyInputFocus} onBlur={this.handleMoneyInputBlur} style={moneyInputFocused ? style.moneyInputOnFocused : style.moneyInput} />
-        <Trench toggle={moneyWithComma.exchangedToCompare !== ''} >
-          <Comparator moneyType={moneyType.to} moneyInput={moneyWithComma.input} exchangedAbroad={moneyWithComma.exchanged} exchangedToCompare={moneyWithComma.exchangedToCompare} compareBankName={excData[inputMode][selectedMoney][0]['bank']} />
-          <AlertableButton value={excButtonValue} errMessage={errMessage} onClick={this.handleExcButtonClick} style={style.alertableButton} />
-        </Trench>
+        <LabeledInput label='환전할 금액' value={insertComma(moneyInput)} footer={moneyType.from} onChange={this.handleMoneyInputChange} onFocus={this.handleMoneyInputFocus} onBlur={this.handleMoneyInputBlur} style={moneyInputFocused ? style.moneyInputOnFocused : style.moneyInput} />
+        <div className={spread ? 'comparator__container--spread' : 'comparator__container'} >
+          <LabeledInput label={<div>{excData[inputMode][selectedMoney][0]['bank']}에서 환전하면</div>} value={insertComma(moneyToCompare) + ' ' + moneyType.to} readOnly={true} style={style.exchangedToCompare} />
+          <LabeledInput label={<div><img src='img/abroad.png' height='16px' style={{ position: 'relative', top: 2 }} />에서 환전하면</div>} value={insertComma(moneyExchanged) + ' ' + moneyType.to} readOnly={true} style={style.exchangedAbroad} />
+          <AlertableButton value={<div><img src='img/abroad.png' height='22px' style={{ position: 'relative', top: -3, verticalAlign: 'middle' }} />에서 환전하기</div>} errMessage={errMessage} onClick={this.handleExcButtonClick} style={style.alertableButton} />
+        </div>
       </div>
     )
   }
@@ -340,6 +337,24 @@ const style = {
       text: {
         fontSize: '1.2rem'
       }
+    }
+  },
+  exchangedAbroad: {
+    container: {
+      border: '1px solid lightcoral',
+      boxShadow: '0 0 3px lightcoral'
+    },
+    input: {
+      cursor: 'default'
+    }
+  },
+  exchangedToCompare: {
+    container: {
+      border: '1px solid darkslategrey',
+      boxShadow: '0 0 3px darkslategrey'
+    },
+    input: {
+      cursor: 'default'
     }
   }
 }

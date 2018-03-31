@@ -5,7 +5,7 @@ import request from 'superagent'
 import { renewExc } from '../../action'
 import { excRenewCycle, excRenewURL } from '../../config'
 import { sortExc } from '../../util'
-import { SideBoard, MainBoard } from '..'
+import { SideBoard, MainBoard, ExtraBoard } from '..'
 import './App.css'
 
 class App extends Component {
@@ -38,6 +38,7 @@ class App extends Component {
       <div className='app'>
         <SideBoard />
         <MainBoard />
+        <ExtraBoard />
       </div>
     )
   }

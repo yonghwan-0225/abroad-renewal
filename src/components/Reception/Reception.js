@@ -145,7 +145,7 @@ class Reception extends Component {
       </div>
     ) : (
       <div className='reception__phrases--spread'>
-        <Phrase value='아 맞다, 나 가입했었다' onClick={this.setModeLogin} className={{ text: 'basic-phrase' }} />
+        <Phrase value='되돌아갈래요' onClick={this.setModeLogin} className={{ text: 'basic-phrase' }} />
       </div>
     )
     return (
