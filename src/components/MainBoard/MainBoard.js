@@ -20,7 +20,8 @@ const mapDispatchToProps = dispatch => ({
 })
 MainBoard.propTypes = {
   mode: PropTypes.string.isRequired,
-  brake: PropTypes.bool.isRequired
+  brake: PropTypes.bool.isRequired,
+  alertMessage: PropTypes.string.isRequired
 }
 MainBoard.defaultProps = {
 

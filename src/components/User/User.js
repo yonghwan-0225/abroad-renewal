@@ -1,27 +1,16 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { UserInfo, Bar, UserOrder } from '..'
 import './User.css'
 
-class User extends Component {
-  constructor (props) {
-    super (props)
-    this.state = {
-
-    }
-  }
-  render () {
-    const { orderData } = this.props
-    return (
-      <div className='user__container'>
-        <UserInfo />
-        <Bar />
-        {orderData.map(e => <UserOrder key={e.orderNo} {...e} />)}
-      </div>
-    )
-  }
-}
+const User = ({ orderData }) => (
+  <div className='user__container'>
+    <UserInfo />
+    <Bar />
+    {orderData.map(e => <UserOrder key={e.orderNo} {...e} />)}
+  </div>
+)
 const mapStateToProps = state => ({
   orderData: state.user.orderData
 })

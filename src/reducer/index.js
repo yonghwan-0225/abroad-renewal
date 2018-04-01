@@ -11,11 +11,6 @@ const boardInitState = {
     mode: 'exchange',
     brake: false,
     alertMessage: ''
-  },
-  extraBoard: {
-    mode: 'insurance',
-    brake: false,
-    alertMessage: ''
   }
 }
 const excInitState = {
