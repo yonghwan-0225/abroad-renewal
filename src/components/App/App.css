@@ -15,9 +15,9 @@
     left: calc(50% - 387px);
   }
 }
-@media (min-width: 1300px) {
+/* @media (min-width: 1300px) {
   .app {
     width: 1191px;
     left: calc(50% - 585px)
   }
-}
+} */

@@ -11,8 +11,8 @@
   border-radius: 5px;
   text-align: center;
 }
-@media (min-width: 1300px) {
+/* @media (min-width: 1300px) {
   .side-board__container {
     margin-bottom: 85px;
   }
-}
+} */

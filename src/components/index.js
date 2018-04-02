@@ -16,6 +16,7 @@ import LabeledInput from './LabeledInput/LabeledInput'
 import MainBoard from './MainBoard/MainBoard'
 import Phrase from './Phrase/Phrase'
 import Reception from './Reception/Reception'
+import SearchRoute from './SearchRoute/SearchRoute'
 import SideBoard from './SideBoard/SideBoard'
 import User from './User/User'
 import UserInfo from './UserInfo/UserInfo'
@@ -40,6 +41,7 @@ export {
   MainBoard,
   Phrase,
   Reception,
+  SearchRoute,
   SideBoard,
   User,
   UserInfo,

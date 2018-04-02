@@ -1,11 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { Insurance, Bar } from '..'
+import { SearchRoute, Bar } from '..'
 import './ExtraBoard.css'
 
 const ExtraBoard = () => (
   <div className='extra-board__container'>
+    <SearchRoute />
   </div>
 )
 const mapStateToProps = state => ({

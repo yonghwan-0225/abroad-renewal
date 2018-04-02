@@ -34,22 +34,27 @@ class App extends Component {
     })
   }
   render () {
+    const extra = this.props.login ? <ExtraBoard /> : undefined
     return (
       <div className='app'>
         <SideBoard />
         <MainBoard />
-        <ExtraBoard />
+        {extra}
       </div>
     )
   }
 }
 App.propTypes = {
+  login: PropTypes.bool.isRequired,
   onRenew: PropTypes.func.isRequired
 }
 App.defaultProps = {
 
 }
+const mapStateToProps = state => ({
+  login: state.user.login
+})
 const mapDispatchToProps = dispatch => ({
   onRenew: payload => dispatch(renewExc(payload))
 })
-export default connect(undefined, mapDispatchToProps)(App)
+export default connect(mapStateToProps, mapDispatchToProps)(App)

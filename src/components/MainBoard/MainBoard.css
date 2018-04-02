@@ -11,15 +11,14 @@
   border-radius: 5px;
   text-align: center;
 }
-@media (min-width: 900px) {
+/* @media (min-width: 900px) {
   .main-board__container {
     margin-bottom: 85px;
   }
-}
-
-@media (min-width: 1300px) {
+} */
+/* @media (min-width: 1300px) {
   .main-board__container {
     float: left;
     margin-bottom: 85px;
   }
-}
+} */
