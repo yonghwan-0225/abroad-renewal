@@ -11,16 +11,16 @@ import './App.css'
 class App extends Component {
   constructor (props) {
     super(props)
-    this.renew = this.renew.bind(this)
+    this.renewExchange = this.renewExchange.bind(this)
   }
   componentDidMount () {
-    this.renew()
-    this.timer = setInterval(this.renew, excRenewCycle)
+    this.renewExchange()
+    this.timer = setInterval(this.renewExchange, excRenewCycle)
   }
   componentWillUnmount () {
     clearInterval(this.timer)
   }
-  renew () {
+  renewExchange () {
     request.get(excRenewURL).query({ dummy: String(parseInt(Math.random() * 100000000)) }).accept('application/json').end((err, res) => {
       if (err) return
       const { status, message, entry, excData, measure, serviceRate } = res.body

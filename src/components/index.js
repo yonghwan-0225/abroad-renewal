@@ -1,3 +1,4 @@
+import AirportMap from './AirportMap/AirportMap'
 import AlertableButton from './AlertableButton/AlertableButton'
 import App from './App/App'
 import Bar from './Bar/Bar'
@@ -23,6 +24,7 @@ import UserInfo from './UserInfo/UserInfo'
 import UserOrder from './UserOrder/UserOrder'
 
 export {
+  AirportMap,
   AlertableButton,
   App,
   Bar,

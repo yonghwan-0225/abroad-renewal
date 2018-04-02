@@ -8,7 +8,7 @@ const portNo = 17315
 
 server.use('/', express.static('./public'))
 server.use(bodyParser.urlencoded({ extended: false }))
-server.get('/api/renew', (req, res) => {
+server.get('/api/exchange-rate', (req, res) => {
   res.json({
     status: true,
     entry: ['$', '€', '元', '￥'],

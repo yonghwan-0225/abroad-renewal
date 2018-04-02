@@ -10,8 +10,8 @@ const businessURL = 'http://10.1.41.228:80'
 
 server.use('/', express.static('./public'))
 server.use(bodyParser.urlencoded({ extended: false }))
-server.get('/api/renew', (req, res) => {
-  request.get(crawlingURL + '/api/renew').query({ dummy: req.query.dummy }).accept('application/json').end((err, proxyRes) => {
+server.get('/api/exchange-rate', (req, res) => {
+  request.get(crawlingURL + '/api/exchange-rate').query({ dummy: req.query.dummy }).accept('application/json').end((err, proxyRes) => {
     if (err) {
       res.json({
         status: false,
