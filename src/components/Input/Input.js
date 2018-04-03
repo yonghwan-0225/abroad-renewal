@@ -87,15 +87,14 @@ const Input = ({ value, placeholder, onChange, onClick, type, readOnly }) => {
   function inputAddress () {
     switch(type) {
       case 'address':
-        const socket = io()
-        socket.on('address', address => {
+        popWindow = window.open("/api/address", "pop", "width=570, height=420, scrollbars=yes, resizable=yes")
+        window.callbackAddress = (zipNo, roadFullAddr) => {
           popWindow.close()
           onChange({
             target: 'inputAddress',
-            inputValue: '[' + address.zipNo + '] ' + address.roadFullAddr
+            inputValue: '[' + zipNo + '] ' + roadFullAddr
           })
-        })
-        popWindow = window.open("/pop/address-pop.html", "pop", "width=570, height=420, scrollbars=yes, resizable=yes")
+        }
       default:
         return
     }

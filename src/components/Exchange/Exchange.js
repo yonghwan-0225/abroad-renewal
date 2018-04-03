@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import request from 'superagent'
-import { excLimitAmount, exchangeURL } from '../../config'
+import { excLimitAmount, exchangeURL, travelURL } from '../../config'
 import { insertComma, excTypeNumber, getCurrentTime } from '../../util'
 import { setBrake, clearBrake, renewOrderData } from '../../action'
 import { ButtonList, ExcTable, LabeledInput, AlertableButton } from '..'
@@ -135,6 +135,26 @@ class Exchange extends Component {
           moneyExchanged: '',
           moneyToCompare: ''
         })
+
+        // 출국정보 입력 팝업
+        let popWindow = window.open("/pop/travel-pop.html", "pop", "width=570, height=420, scrollbars=yes, resizable=yes")
+        window.callbackTravel = function (travel) {
+          popWindow.close()
+          const params = {
+            id,
+            dateDepart: travel.dateDepart,
+            dateArrival: travel.dateArrival,
+            destination: travel.destination
+          }
+          request.post(travelURL).type('form').send(params).end((err, res) => {
+            if (err) {
+              console.log(err);
+            } else if (!res.body.status) {
+              console.log(res.body.message)
+            }
+            return
+          })
+        }
       } else {
         clearBrakeAll()
         this.update({ errMessage: message })

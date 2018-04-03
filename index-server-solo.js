@@ -1,7 +1,7 @@
 const express = require('express')
 const server = express()
-const http = require('http').Server(server)
-const io = require('socket.io')(http)
+//const http = require('http').Server(server)
+//const io = require('socket.io')(http)
 const bodyParser = require('body-parser')
 const request = require('superagent')
 const portNo = 17315
@@ -211,6 +211,28 @@ server.post('/api/edit', (req, res) => {
     status: true
   })
 })
+server.get('/api/address', (req, res) => {
+  res.redirect('/pop/address-pop.html')
+})
+server.post('/api/address', (req, res) => {
+  res.status(200).send(`
+    <!DOCTYPE>
+      <html>
+        <head>
+          <meta charset="UTF-8">
+        </head>
+        <script language="javascript">
+          window.onload = init
+          function init () {
+            opener.callbackAddress('${req.body.zipNo}', '${req.body.roadFullAddr}')
+          }
+        </script>
+        <body>
+          TEST
+        </body>
+      </html>
+  `)
+})
 var orderNo = 5023
 server.post('/api/exchange', (req, res) => {
   res.json({
@@ -227,10 +249,7 @@ server.post('/api/exchange', (req, res) => {
   })
   orderNo = orderNo + 1
 })
-server.post('/callback/address', (req, res) => {  // address callback
-  io.emit('address', req.body)
-})
-http.listen(portNo, () => {
+server.listen(portNo, () => {
   console.log('====================================================')
   console.log()
   console.log(`   server is running at: 'http://localhost:${portNo}'`)

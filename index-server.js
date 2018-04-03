@@ -1,7 +1,7 @@
 const express = require('express')
 const server = express()
-const http = require('http').Server(server)
-const io = require('socket.io')(http)
+//const http = require('http').Server(server)
+//const io = require('socket.io')(http)
 const bodyParser = require('body-parser')
 const request = require('superagent')
 const portNo = 17315
@@ -70,10 +70,41 @@ server.post('/api/exchange', (req, res) => {
     }
   })
 })
-server.post('/callback/address', (req, res) => {  // address callback
-  io.emit('address', req.body)
+server.get('/api/address', (req, res) => {
+  res.redirect('/pop/address-pop.html')
 })
-http.listen(portNo, () => {
+server.post('/api/address', (req, res) => {
+  res.status(200).send(`
+    <!DOCTYPE>
+      <html>
+        <head>
+          <meta charset="UTF-8">
+        </head>
+        <script language="javascript">
+          window.onload = init
+          function init () {
+            opener.callbackAddress('${req.body.zipNo}', '${req.body.roadFullAddr}')
+          }
+        </script>
+        <body>
+          TEST
+        </body>
+      </html>
+  `)
+})
+server.post('/api/travel', (req, res) => {
+  request.post(businessURL + '/api/travel').type('form').send(req.body).end((err, proxyRes) => {
+    if (err) {
+      res.json({
+        status: false,
+        message: 'Business서버 응답 오류'
+      })
+    } else {
+      res.json(proxyRes.body)
+    }
+  })
+})
+server.listen(portNo, () => {
   console.log('====================================================')
   console.log()
   console.log(`   server is running at: 'http://localhost:${portNo}'`)

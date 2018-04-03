@@ -7,6 +7,7 @@ export const loginURL = `${baseURL}/api/login`
 export const joinURL = `${baseURL}/api/join`
 export const editURL = `${baseURL}/api/edit`
 export const exchangeURL = `${baseURL}/api/exchange`
+export const travelURL = `${baseURL}/api/travel`
 export const airportMapURL = 'http://10.1.44.48:80/airport-map'
 
 export const excLimitAmount = 100000000

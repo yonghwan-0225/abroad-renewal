@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
   </head>
   <script language="javascript">
-  function init() {
-  	var url = 'http://10.1.41.241:17315/callback/address'
-  	var confmKey = "U01TX0FVVEgyMDE4MDMxNjEwMjgzNjEwNzczMTg="
-  	var resultType = "4" // 도로명주소 검색결과 화면 출력내용, 1 : 도로명, 2 : 도로명+지번, 3 : 도로명+상세건물명, 4 : 도로명+지번+상세건물명
-    document.form.confmKey.value = confmKey
-		document.form.returnUrl.value = url
-		document.form.resultType.value = resultType
-		document.form.action="http://www.juso.go.kr/addrlink/addrLinkUrl.do" //인터넷망
-		//document.form.action="http://www.juso.go.kr/addrlink/addrMobileLinkUrl.do"; //모바일 웹인 경우, 인터넷망
-		document.form.submit()
-  }
+    function init() {
+    	var url = 'http://localhost:17315/api/address'
+    	var confmKey = "U01TX0FVVEgyMDE4MDMxNjEwMjgzNjEwNzczMTg="
+    	var resultType = "4" // 도로명주소 검색결과 화면 출력내용, 1 : 도로명, 2 : 도로명+지번, 3 : 도로명+상세건물명, 4 : 도로명+지번+상세건물명
+      document.form.confmKey.value = confmKey
+  		document.form.returnUrl.value = url
+  		document.form.resultType.value = resultType
+  		document.form.action="http://www.juso.go.kr/addrlink/addrLinkUrl.do" //인터넷망
+  		//document.form.action="http://www.juso.go.kr/addrlink/addrMobileLinkUrl.do"; //모바일 웹인 경우, 인터넷망
+  		document.form.submit()
+    }
   </script>
   <body onload="init()">
   	<form id="form" name="form" method="post">
