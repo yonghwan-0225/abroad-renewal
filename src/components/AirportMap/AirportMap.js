@@ -6,7 +6,7 @@ import { Phrase } from '..'
 
 const AirportMap = () => {
   function handleClick () {
-    window.open(airportMapURL, "pop", `width=${window.innerWidth}, height=${window.innerHeight}, scrollbars=yes, resizable=yes`)
+    window.open(airportMapURL, "pop", `width=1050px, height=${window.innerHeight}, scrollbars=yes, resizable=yes`)
   }
   return (
     <Phrase value='공항가서 뭐 먹지?' onClick={handleClick} className={{ text: 'basic-phrase' }} />
