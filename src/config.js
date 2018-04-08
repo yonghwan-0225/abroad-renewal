@@ -7,6 +7,6 @@ export const joinURL = `${baseURL}/api/join`
 export const editURL = `${baseURL}/api/edit`
 export const exchangeURL = `${baseURL}/api/exchange`
 export const travelURL = `${baseURL}/api/travel`
-export const airportMapURL = 'http://13.125.64.140:8080/abroad-crawling/airport-map.html'
+export const airportMapURL = 'http://ec2-13-125-248-119.ap-northeast-2.compute.amazonaws.com/airport-map.html'
 
 export const excLimitAmount = 100000000

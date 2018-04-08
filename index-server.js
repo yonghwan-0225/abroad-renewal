@@ -1,12 +1,10 @@
 const express = require('express')
 const server = express()
-//const http = require('http').Server(server)
-//const io = require('socket.io')(http)
 const bodyParser = require('body-parser')
 const request = require('superagent')
-const portNo = 17315
-const crawlingURL = 'http://10.1.44.48:80'
-const businessURL = 'http://10.1.41.228:80'
+const portNo = process.env.PORT || 17315
+const crawlingURL = 'http://ec2-13-125-248-119.ap-northeast-2.compute.amazonaws.com'
+const businessURL = 'http://52.79.76.134:8080/abroad_business'
 
 server.use('/', express.static('./public'))
 server.use(bodyParser.urlencoded({ extended: false }))
