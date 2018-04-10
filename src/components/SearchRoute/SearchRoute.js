@@ -14,13 +14,7 @@ const SearchRoute = ({ address }) => {
 const mapStateToProps = state => ({
   address: state.user.address
 })
-const mapDispatchToProps = dispatch => ({
-
-})
 SearchRoute.propTypes = {
   address: PropTypes.string.isRequired
 }
-SearchRoute.defaultProps = {
-
-}
-export default connect(mapStateToProps, mapDispatchToProps)(SearchRoute)
+export default connect(mapStateToProps)(SearchRoute)

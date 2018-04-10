@@ -1,0 +1,41 @@
+.not-allowed-browser__container {
+  width: 400px;
+  height: 100%;
+  margin: 0 auto;
+}
+.not-allowed-browser__vertical-container {
+  position: relative;
+  top: calc(50% - 120px);
+  width: 400px;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  background-color: white;
+  border: 1px solid rgb(199, 199, 199);
+  border-radius: 5px;
+  text-align: center;
+}
+.not-allowed-browser__logo {
+  width: 400px;
+  margin-bottom: 20px;
+}
+.not-allowed-browser__text-container {
+  width: 400px;
+  margin-bottom: 20px;
+}
+.not-allowed-browser__text {
+  color: #717171;
+  font-size: 1.2rem;
+  cursor: default;
+}
+.not-allowed-browser__text__chrome {
+  color: lightcoral;
+  font-weight: bold;
+}
+.not-allowed-browser__text__chrome-download {
+  color: #717171;
+  font-weight: bold;
+  cursor: pointer;
+}
+.not-allowed-browser__text__chrome-download:hover {
+  color: lightcoral;
+}

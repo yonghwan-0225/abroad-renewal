@@ -15,15 +15,9 @@ const mapStateToProps = state => ({
   brake: state.board.mainBoard.brake,
   alertMessage: state.board.mainBoard.alertMessage
 })
-const mapDispatchToProps = dispatch => ({
-
-})
 MainBoard.propTypes = {
   mode: PropTypes.string.isRequired,
   brake: PropTypes.bool.isRequired,
   alertMessage: PropTypes.string.isRequired
 }
-MainBoard.defaultProps = {
-
-}
-export default connect(mapStateToProps, mapDispatchToProps)(MainBoard)
+export default connect(mapStateToProps)(MainBoard)

@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
 import { ExcTableRow } from '..'
 import './ExcTable.css'
 
@@ -29,8 +28,5 @@ ExcTable.propTypes = {
   header: PropTypes.object.isRequired,
   excData: PropTypes.array.isRequired,
   serviceRate: PropTypes.object.isRequired
-}
-ExcTable.defaultProps = {
-
 }
 export default ExcTable

@@ -29,9 +29,6 @@ const mapDispatchToProps = dispatch => ({
 Introduce.propTypes = {
   setModeLogin: PropTypes.func.isRequired
 }
-Introduce.defaultProps = {
-
-}
 export default connect(undefined, mapDispatchToProps)(Introduce)
 const styles = {
   container: {

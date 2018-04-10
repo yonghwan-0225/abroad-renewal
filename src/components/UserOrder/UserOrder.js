@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
 import { excTypeFullString, excTypeFormerString, excTypeAfterString, insertComma } from '../../util'
 import { LabeledInput } from '..'
 import './UserOrder.css'
@@ -33,12 +32,6 @@ class UserOrder extends Component {
     )
   }
 }
-const mapStateToProps = state => ({
-
-})
-const mapDispatchToProps = dispatch => ({
-
-})
 UserOrder.propTypes = {
   orderNo: PropTypes.node.isRequired,
   orderType: PropTypes.node.isRequired,
@@ -48,10 +41,7 @@ UserOrder.propTypes = {
   total: PropTypes.string.isRequired,
   time: PropTypes.string.isRequired
 }
-UserOrder.defaultProps = {
-
-}
-export default connect(mapStateToProps, mapDispatchToProps)(UserOrder)
+export default UserOrder
 const style = {
   labeledInput: {
     container: {

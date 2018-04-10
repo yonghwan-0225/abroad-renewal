@@ -14,14 +14,7 @@ const User = ({ orderData }) => (
 const mapStateToProps = state => ({
   orderData: state.user.orderData
 })
-const mapDispatchToProps = dispatch => ({
-
-})
 User.propTypes = {
   orderData: PropTypes.array.isRequired
-
 }
-User.defaultProps = {
-
-}
-export default connect(mapStateToProps, mapDispatchToProps)(User)
+export default connect(mapStateToProps)(User)

@@ -165,9 +165,6 @@ class Reception extends Component {
     )
   }
 }
-const mapStateToProps = state => ({
-
-})
 const mapDispatchToProps = dispatch => ({
   setBrake: () => dispatch(setBrake({ board: 'sideBoard' })),
   clearBrake: alertMessage => dispatch(clearBrake({ board: 'sideBoard', alertMessage })),
@@ -180,10 +177,7 @@ Reception.propTypes = {
   clearBrake: PropTypes.func.isRequired,
   onLogin: PropTypes.func.isRequired
 }
-Reception.defaultProps = {
-
-}
-export default connect(mapStateToProps, mapDispatchToProps)(Reception)
+export default connect(undefined, mapDispatchToProps)(Reception)
 const style = {
   alertableButton: {
     err: {

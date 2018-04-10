@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { mergeIfExist } from '../../util'
 import './Phrase.css'
 
 const Phrase = ({ value, onClick, style, className }) => (

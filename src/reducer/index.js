@@ -84,6 +84,16 @@ export function user (state = userInitState, action) {
       return {
         login: false
       }
+    case ACTION.RENEW_USER:
+      return {
+        login: state.login,
+        id: state.id,
+        name: state.name,
+        email: action.email,
+        phone: action.phone,
+        address: action.address,
+        orderData: state.orderData
+      }
     case ACTION.RENEW_ORDER_DATA:
       return {
         login: state.login,

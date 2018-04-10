@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import request from 'superagent'
 import { editURL } from '../../config'
-import { setBrake, clearBrake, changeMode } from '../../action'
+import { setBrake, clearBrake, changeMode, renewUser } from '../../action'
 import { Input, AlertableButton, Bar, Phrase } from '..'
 
 class Edit extends Component {
@@ -30,7 +30,7 @@ class Edit extends Component {
     this.update({ errMessage: '이름은 앵간하면 바꿀 수 없습니다' })
   }
   handleEditClick () {
-    const { setBrake, clearBrake, setModeUser } = this.props
+    const { setBrake, clearBrake, setModeUser, onEdit } = this.props
     const errMessage = this.test(this.state)
     if (errMessage) {
       this.update({ errMessage })
@@ -52,8 +52,9 @@ class Edit extends Component {
           clearBrake()
           return
         }
-        const { status, message } = res.body
+        const { status, userData, message } = res.body
         if (status) {
+          onEdit({ userData })
           setModeUser()
           clearBrake('수정되었습니다')
         } else {
@@ -123,7 +124,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   setBrake: () => dispatch(setBrake({ board: 'sideBoard' })),
   clearBrake: alertMessage => dispatch(clearBrake({ board: 'sideBoard', alertMessage })),
-  setModeUser: () => dispatch(changeMode({ board: 'sideBoard', mode: 'user' }))
+  setModeUser: () => dispatch(changeMode({ board: 'sideBoard', mode: 'user' })),
+  onEdit: payload => dispatch(renewUser(payload))
 })
 Edit.propTypes = {
   id: PropTypes.string.isRequired,
@@ -134,9 +136,6 @@ Edit.propTypes = {
   setBrake: PropTypes.func.isRequired,
   clearBrake: PropTypes.func.isRequired,
   setModeUser: PropTypes.func.isRequired
-}
-Edit.defaultProps = {
-
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Edit)
 const style = {

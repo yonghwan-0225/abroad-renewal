@@ -48,9 +48,6 @@ App.propTypes = {
   login: PropTypes.bool.isRequired,
   onRenew: PropTypes.func.isRequired
 }
-App.defaultProps = {
-
-}
 const mapStateToProps = state => ({
   login: state.user.login
 })

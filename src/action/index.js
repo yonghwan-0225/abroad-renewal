@@ -2,6 +2,7 @@ export const SET_BRAKE = 'SB'
 export const CLEAR_BRAKE = 'CB'
 export const CHANGE_MODE = 'CM'
 export const RENEW_EXC = 'RE'
+export const RENEW_USER = 'RU'
 export const RENEW_ORDER_DATA = 'ROD'
 export const LOG_IN = 'LI'
 export const LOG_OUT = 'LO'
@@ -26,6 +27,12 @@ export const renewExc = ({ entry, excData, measure, serviceRate }) => ({
   excData,
   measure,
   serviceRate
+})
+export const renewUser = ({ userData }) => ({
+  type: RENEW_USER,
+  email: userData.email,
+  phone: userData.phone,
+  address: userData.address
 })
 export const renewOrderData = ({ newOrderData }) => ({
   type: RENEW_ORDER_DATA,

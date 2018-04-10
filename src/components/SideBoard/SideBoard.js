@@ -31,9 +31,6 @@ SideBoard.propTypes = {
   login: PropTypes.bool.isRequired,
   setModeDefault: PropTypes.func.isRequired
 }
-SideBoard.defaultProps = {
-
-}
 export default connect(mapStateToProps, mapDispatchToProps)(SideBoard)
 const style = {
     logoImg: {

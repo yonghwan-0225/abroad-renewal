@@ -3,8 +3,8 @@ const server = express()
 const bodyParser = require('body-parser')
 const request = require('superagent')
 const portNo = process.env.PORT || 17315
-const crawlingURL = 'http://ec2-13-125-248-43.ap-northeast-2.compute.amazonaws.com'
-const businessURL = 'http://52.79.76.134:8080/abroad_business'
+const crawlingURL = 'http://ec2-52-78-119-228.ap-northeast-2.compute.amazonaws.com'
+const businessURL = 'http://52.79.76.134:8080/abroad_business2'
 
 server.use('/', express.static('./public'))
 server.use(bodyParser.urlencoded({ extended: false }))
@@ -89,18 +89,6 @@ server.post('/api/address', (req, res) => {
         </body>
       </html>
   `)
-})
-server.post('/api/travel', (req, res) => {
-  request.post(businessURL + '/api/travel').type('form').send(req.body).end((err, proxyRes) => {
-    if (err) {
-      res.json({
-        status: false,
-        message: 'Business서버 응답 오류'
-      })
-    } else {
-      res.json(proxyRes.body)
-    }
-  })
 })
 server.listen(portNo, () => {
   console.log('====================================================')

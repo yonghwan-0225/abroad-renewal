@@ -1,24 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
-import { SearchRoute, AirportMap } from '..'
+import { SearchRoute, AirportMap, AirportCongestion } from '..'
 import './ExtraBoard.css'
 
 const ExtraBoard = () => (
   <div className='extra-board__container'>
     <SearchRoute />
     <AirportMap />
+    <AirportCongestion />
   </div>
 )
-const mapStateToProps = state => ({
-
-})
-const mapDispatchToProps = dispatch => ({
-
-})
-ExtraBoard.propTypes = {
-}
-ExtraBoard.defaultProps = {
-
-}
-export default connect(mapStateToProps, mapDispatchToProps)(ExtraBoard)
+export default ExtraBoard
