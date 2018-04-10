@@ -3,7 +3,7 @@ const server = express()
 const bodyParser = require('body-parser')
 const request = require('superagent')
 const portNo = process.env.PORT || 17315
-const crawlingURL = 'http://ec2-13-125-248-119.ap-northeast-2.compute.amazonaws.com'
+const crawlingURL = 'http://ec2-13-125-248-43.ap-northeast-2.compute.amazonaws.com'
 const businessURL = 'http://52.79.76.134:8080/abroad_business'
 
 server.use('/', express.static('./public'))
