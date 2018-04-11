@@ -2,14 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { changeMode } from '../../action'
-import { Bar, Reception, User, Edit, Introduce, Brake } from '..'
+import { Bar, Reception, User, Edit, Introduce, Creator, Brake } from '..'
 import './SideBoard.css'
 
 const SideBoard = ({ mode, brake, alertMessage, login, setModeDefault }) => (
   <div className='side-board__container'>
     <img src='img/abroad.png' onClick={() => setModeDefault(login ? 'user' : 'reception')} style={style.logoImg} />
     <Bar />
-    {mode === 'reception' ? <Reception /> : mode === 'user' ? <User /> : mode === 'edit' ? <Edit /> : mode === 'introduce' ? <Introduce /> : undefined}
+    {mode === 'reception' ? <Reception /> : mode === 'user' ? <User /> : mode === 'edit' ? <Edit /> : mode === 'introduce' ? <Introduce /> : mode === 'creator' ? <Creator /> : undefined}
     <Brake brake={brake} alertMessage={alertMessage} />
   </div>
 )

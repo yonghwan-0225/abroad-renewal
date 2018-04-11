@@ -6,7 +6,7 @@ import { board, exc, user } from './reducer'
 import { App, NotAllowedBrowser } from './components';
 import './global.css'
 
-if (navigator.userAgent.toLowerCase().indexOf('chrome') == -1) {  // only allow chrome
+if (navigator.userAgent.toLowerCase().indexOf('chrome') == -1 && navigator.userAgent.toLowerCase().indexOf('iphone') == -1) {  // only allow chrome, mozilla
   ReactDOM.render(
     <NotAllowedBrowser />,
     document.getElementById('react-container')

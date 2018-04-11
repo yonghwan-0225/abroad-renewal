@@ -6,6 +6,7 @@ import Bar from './Bar/Bar'
 import Brake from './Brake/Brake'
 import Button from './Button/Button'
 import ButtonList from './ButtonList/ButtonList'
+import Creator from './Creator/Creator'
 import Edit from './Edit/Edit'
 import Exchange from './Exchange/Exchange'
 import ExcTable from './ExcTable/ExcTable'
@@ -17,6 +18,7 @@ import LabeledInput from './LabeledInput/LabeledInput'
 import MainBoard from './MainBoard/MainBoard'
 import NotAllowedBrowser from './NotAllowedBrowser/NotAllowedBrowser'
 import Phrase from './Phrase/Phrase'
+import Profile from './Profile/Profile'
 import Reception from './Reception/Reception'
 import SearchRoute from './SearchRoute/SearchRoute'
 import SideBoard from './SideBoard/SideBoard'
@@ -33,6 +35,7 @@ export {
   Brake,
   Button,
   ButtonList,
+  Creator,
   Edit,
   Exchange,
   ExcTable,
@@ -44,6 +47,7 @@ export {
   MainBoard,
   NotAllowedBrowser,
   Phrase,
+  Profile,
   Reception,
   SearchRoute,
   SideBoard,

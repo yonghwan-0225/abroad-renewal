@@ -13,7 +13,7 @@ const LabeledInput = ({ label, value, footer, onClick, onChange, onFocus, onBlur
   return (
     <div onClick={handleClick} style={style.container} className={className.container || 'labeled-input__container'}>
       <div style={style.label} className={className.label || 'labeled-input__label'}>{label}</div>
-      <input value={value} onChange={onChange} onFocus={onFocus} onBlur={onBlur} style={style.input} className={className.input || 'labeled-input__input'} type={type} readOnly={readOnly} ref={_this => _input = _this} />
+      <input value={value} onChange={onChange} onFocus={onFocus} onBlur={onBlur} style={style.input} className={className.input || 'labeled-input__input'} type={type} readOnly={readOnly} ref={_this => _input = _this} tabIndex={-1} />
       {footerElement}
     </div>
   )

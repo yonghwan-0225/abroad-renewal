@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import './Input.css'
 
-const Input = ({ value, placeholder, onChange, onClick, type, readOnly }) => {
+const Input = ({ value, placeholder, onChange, onClick, type, readOnly, tabIndex }) => {
   function handleOnChange (e) {
     switch(type) {
       case 'id':
@@ -99,7 +99,7 @@ const Input = ({ value, placeholder, onChange, onClick, type, readOnly }) => {
         return
     }
   }
-  return type !== 'address' ? <input value={value} placeholder={placeholder} onChange={handleOnChange} onClick={onClick} className='basic-input' type={type === 'password' || type === 'new-password' ? 'password' : 'text'} readOnly={readOnly} /> : <textarea value={value} placeholder={placeholder} onClick={inputAddress} className='wide-input' readOnly />
+  return type !== 'address' ? <input value={value} placeholder={placeholder} onChange={handleOnChange} onClick={onClick} className='basic-input' type={type === 'password' || type === 'new-password' ? 'password' : 'text'} readOnly={readOnly} tabIndex={tabIndex} /> : <textarea value={value} placeholder={placeholder} onClick={inputAddress} className='wide-input' readOnly tabIndex={tabIndex} />
 }
 Input.propTypes = {
   value: PropTypes.string.isRequired,
@@ -107,7 +107,8 @@ Input.propTypes = {
   onChange: PropTypes.func,
   onClick: PropTypes.func,
   type: PropTypes.string.isRequired,
-  readOnly: PropTypes.bool
+  readOnly: PropTypes.bool,
+  tabIndex: PropTypes.number
 }
 Input.defaultProps = {
   type: 'text',

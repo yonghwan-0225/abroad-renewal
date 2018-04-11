@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { setBrake, clearBrake, changeMode } from '../../action'
+import { changeMode } from '../../action'
 import { Bar, Phrase } from '..'
 
 const Introduce = ({ setModeLogin }) => {
@@ -19,7 +19,7 @@ const Introduce = ({ setModeLogin }) => {
       <p>4. 환전하길 원하는 금액을 입력한 뒤 {logo}에서 환전할 경우 얼마를 절약할 수 있는지 확인합니다. (비교대상이 되는 환율은 {logo} 다음으로 사용자에게 가장 유리한 환율입니다.)</p>
       <p style={styles.last}>5. 결제 완료를 확인한 후 편리하게 외화를 수령합니다. (환전금은 등기우편으로 배송되며 배송비는 무료입니다.)</p>
       <Bar />
-      <Phrase value='알겠으니까 되돌아갈래요' onClick={setModeLogin} className={{ text: 'basic-phrase' }} />
+      <Phrase value='그런가보구나' onClick={setModeLogin} className={{ text: 'basic-phrase' }} />
     </div>
   )
 }

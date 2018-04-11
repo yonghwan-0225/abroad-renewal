@@ -1,0 +1,31 @@
+.profile__container {
+  cursor: default;
+}
+.profile__img {
+  width: 250px;
+  margin-bottom: 20px;
+}
+.profile__name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.profile__email {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.profile__website {
+  font-weight: bold;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+.profile__website:hover {
+  color: goldenrod;
+}
+.profile__role {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.profile__say {
+  margin-bottom: 40px;
+}

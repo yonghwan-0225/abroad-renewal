@@ -133,15 +133,17 @@ class Reception extends Component {
   }
   render () {
     const { mode, inputID, inputPW, inputName, inputEmail, inputPhone, inputAddress, errMessage } = this.state
-    const submitButton = mode === 'login' ? (
+    const isLogin = mode === 'login'
+    const submitButton = isLogin ? (
       <AlertableButton value='로그인' errMessage={errMessage} onClick={this.handleLoginClick} style={style.alertableButton} />
     ) : (
       <AlertableButton value='가입하기' errMessage={errMessage} onClick={this.handleJoinClick} style={style.alertableButton} />
     )
-    const phrases = mode === 'login' ? (
+    const phrases = isLogin ? (
       <div className='reception__phrases'>
         <Phrase value='가입하고 싶은데 어떡하죠?' onClick={this.setModeJoin} className={{ text: 'basic-phrase' }} />
         <Phrase value='여기가 대체 뭐하는 곳인가요?' onClick={this.props.setModeIntroduce} className={{ text: 'basic-phrase' }} />
+        <Phrase value='누가 만들었나요?' onClick={this.props.setModeCreator} className={{ text: 'basic-phrase' }} />
       </div>
     ) : (
       <div className='reception__phrases--spread'>
@@ -151,12 +153,12 @@ class Reception extends Component {
     return (
       <div>
         <div className={mode === 'login' ? 'reception__inputs-container' : 'reception__inputs-container--spread'}>
-          <Input value={inputID} placeholder=' 아이디' onChange={this.update} type='id' />
-          <Input value={inputPW} placeholder=' 비밀번호' onChange={this.update} type='password' />
-          <Input value={inputName} placeholder=' 이름' onChange={this.update} type='name' />
-          <Input value={inputEmail} placeholder=' 이메일' onChange={this.update} type='email' />
-          <Input value={inputPhone} placeholder=' 전화번호' onChange={this.update} type='phone' />
-          <Input value={inputAddress} placeholder=' 주소' onChange={this.update} type='address' />
+          <Input value={inputID} placeholder=' 아이디' onChange={this.update} type='id' tabIndex={1} />
+          <Input value={inputPW} placeholder=' 비밀번호' onChange={this.update} type='password' tabIndex={2} />
+          <Input value={inputName} placeholder=' 이름' onChange={this.update} type='name' tabIndex={isLogin ? -1 : 3} />
+          <Input value={inputEmail} placeholder=' 이메일' onChange={this.update} type='email' tabIndex={isLogin ? -1 : 4} />
+          <Input value={inputPhone} placeholder=' 전화번호' onChange={this.update} type='phone' tabIndex={isLogin ? -1 : 5} />
+          <Input value={inputAddress} placeholder=' 주소' onChange={this.update} type='address' tabIndex={isLogin ? -1 : 6} />
         </div>
         {submitButton}
         <Bar />
@@ -170,7 +172,8 @@ const mapDispatchToProps = dispatch => ({
   clearBrake: alertMessage => dispatch(clearBrake({ board: 'sideBoard', alertMessage })),
   onLogin: payload => dispatch(login(payload)),
   setModeUser: () => dispatch(changeMode({ board: 'sideBoard', mode: 'user' })),
-  setModeIntroduce: () => dispatch(changeMode({ board: 'sideBoard', mode: 'introduce' }))
+  setModeIntroduce: () => dispatch(changeMode({ board: 'sideBoard', mode: 'introduce' })),
+  setModeCreator: () => dispatch(changeMode({ board: 'sideBoard', mode: 'creator' }))
 })
 Reception.propTypes = {
   setBrake: PropTypes.func.isRequired,
