@@ -17,9 +17,11 @@
 .profile__website {
   font-weight: bold;
   margin-bottom: 15px;
+}
+.profile__website span {
   cursor: pointer;
 }
-.profile__website:hover {
+.profile__website span:hover {
   color: goldenrod;
 }
 .profile__role {
@@ -28,4 +30,5 @@
 }
 .profile__say {
   margin-bottom: 40px;
+  padding: 0 38px;
 }
